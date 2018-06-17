@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/entities/classids
+END
+ProjectId.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/entities/classids/ProjectId.java
+END
+TeamId.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/entities/classids/TeamId.java
+END
+ArtifactId.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/entities/classids/ArtifactId.java
+END
+DeliverableId.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/entities/classids/DeliverableId.java
+END

@@ -1,0 +1,105 @@
+10
+
+dir
+0
+https://pl3.projectlocker.com/raasoftware/Manage_Project_Homework/svn/MPH-Client/doc/mph/gui/student
+https://pl3.projectlocker.com/raasoftware/Manage_Project_Homework/svn
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8484d23e-75a3-418b-a6ed-9233468c1f43
+
+class-use
+dir
+
+
+
+add
+
+ProjectSelectionScreen.html
+file
+
+
+
+add
+
+StudentInfoScreen.html
+file
+
+
+
+add
+
+ProjectInfoScreen.html
+file
+
+
+
+add
+
+package-frame.html
+file
+
+
+
+add
+
+package-use.html
+file
+
+
+
+add
+
+package-summary.html
+file
+
+
+
+add
+
+StudentMainScreen.TreeStudentProject.html
+file
+
+
+
+add
+
+package-tree.html
+file
+
+
+
+add
+
+RegistrationScreen.html
+file
+
+
+
+add
+
+StudentMainScreen.html
+file
+
+
+
+add
+

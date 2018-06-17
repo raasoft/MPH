@@ -1,0 +1,160 @@
+package com.raaxxo.mph.installation.logic;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+
+import com.raaxxo.mph.installation.gui.InstallationScreen;
+
+
+/**
+ * This class contains the logic to install the files required to run the MPH server in the JBoss folder
+ */
+public class InstallationUtility {
+	
+	String inputPath;
+
+	static InstallationUtility anInstance = null;
+	
+	/**
+	 * @return the unique instance
+	 */
+	static public InstallationUtility getInstance() {
+		
+		if ( anInstance == null ) {
+			anInstance = new InstallationUtility();
+		}
+		
+		return anInstance;
+	}
+	
+	/**
+	 * @param thePath the string representing the path of the JBoss server folder
+	 * @throws IllegalArgumentException if the path given as parameter does not correspond to a JBoss server folder
+	 */
+	public void setInputPath(String thePath) throws IllegalArgumentException {
+		
+		System.out.println("Trying to set the input path to: " + thePath);
+		
+
+		if (new File(thePath).getName().equals("bin") == false) {
+			throw new IllegalArgumentException("The directory selected is wrong. Please retry.");
+		}
+		
+		if (new File(thePath+"/run.bat").exists() == false || new File(thePath+"/run.sh").exists() == false) {
+			throw new IllegalArgumentException("The directory doesn't contain essential files. Please change directory or reinstall JBoss");
+		}
+		
+		inputPath = thePath;
+	}
+	
+	/**
+	 * @return the path taken from the GUI
+	 */
+	public String getInputPath() {
+		return new String(inputPath);
+	}
+	
+	/**
+	 * Install the required files into the path taken from the GUI
+	 * @throws InstallationErrorException if an error occurs during the installation
+	 * @throws FileNotFoundException if a required file or file path is not found
+	 */
+	public void runInstallation() throws InstallationErrorException, FileNotFoundException {
+		
+		
+		// Destination directory
+		//	File dir = new File(getInputPath());
+		ArrayList<File> filePathList = new ArrayList<File>();
+
+		File sourceDir = null;
+		
+		System.out.println(getClass().getClassLoader().getResource("deploy")+" files");
+
+		
+		System.out.println(getClass().getClassLoader().getResource("deploy").getPath()+" files");
+		
+		sourceDir = new File(getClass().getClassLoader().getResource("deploy").getPath()); // sourceDir = new File("data/deploy"); XXX
+		filePathList.clear();
+		for (String aFilePath: sourceDir.list()) {
+			
+			File aFile = new File(aFilePath);
+			File aFileS = new File(getClass().getClassLoader().getResource("deploy/"+aFile.getName()).getPath()); // File aFileS = new File("data/deploy/"+aFile.getName()); XXX
+			filePathList.add(aFileS);
+			System.out.println("detected file: " + aFileS.getAbsolutePath());
+		}
+		
+		for (File aFile: filePathList) {
+			copyfile(aFile.getAbsolutePath(), getInputPath()+"/../server/default/deploy/"+aFile.getName());
+		}
+		
+		System.out.println("data/lib files");
+		sourceDir = new File(getClass().getClassLoader().getResource("lib").getPath()); //sourceDir = new File("data/lib"); XXX
+		filePathList.clear();
+		for (String aFilePath: sourceDir.list()) {
+			
+			File aFile = new File(aFilePath);
+			File aFileS = new File(getClass().getClassLoader().getResource("lib/"+aFile.getName()).getPath()); //File aFileS = new File("data/lib/"+aFile.getName()); XXX
+			filePathList.add(aFileS);
+			System.out.println("detected file: " + aFileS.getAbsolutePath());
+		}
+		
+		for (File aFile: filePathList) {
+			copyfile(aFile.getAbsolutePath(), getInputPath()+"/../server/default/lib/"+aFile.getName());
+		}
+
+	}
+	
+	 /**
+	  * Copies the source file into the destination
+	 * @param srFile the source file
+	 * @param dtFile the destination
+	 * @throws FileNotFoundException if a required file or file path is not found
+	 * @throws InstallationErrorException if an error occurs during the installation
+	 */
+	private void copyfile(String srFile, String dtFile) throws FileNotFoundException, InstallationErrorException {
+		  
+		 try{
+			 File f1 = new File(srFile);
+			 File f2 = new File(dtFile);
+			 
+			 if (f1.exists() == false) {
+				 f2.createNewFile();
+			 }
+			 
+			 
+			 if (f2.exists() == false) {
+				 f2.createNewFile();
+			 }
+			 
+			 InputStream in = new FileInputStream(f1);
+
+			 //For Append the file.
+			 //  OutputStream out = new FileOutputStream(f2,true);
+
+			 //For Overwrite the file.
+			 OutputStream out = new FileOutputStream(f2);
+
+			 byte[] buf = new byte[1024];
+			 int len;
+			 while ((len = in.read(buf)) > 0){
+				 out.write(buf, 0, len);
+			 }
+			 in.close();
+			 out.close();
+			 System.out.println("File copied the specified directory (" +dtFile + ").");
+		 }
+		 catch(FileNotFoundException ex){
+			 throw new FileNotFoundException(ex.getMessage() + " in the specified directory (" +dtFile + ")");
+		 }
+		 catch(IOException e){
+			 throw new InstallationErrorException("The installation of MPH was not completed. Please retry.");
+		 }
+	 }
+
+}

@@ -1,0 +1,21 @@
+	CHANGE LOG FOR MPH
+	==================
+
+- Changes in the RASD
+
+RASD Version 1.1
+-------------------------
+- December 22th 2011	-
+-------------------------
+- System Administrator Interface
+
+.: The developer team firstly thought about implementing
+a GUI for the system administrator on the server side.
+Although, during the Design phase, after spending more 
+time studying the JEE software architecture,
+the team discovered that such a feature was not really
+necessary and could waste too much time for the implementation.
+Instead of a GUI, and because the Database is built on a
+MySQL Server, the system administrator can make use of
+the MySQL Workbench, a graphical tool which makes
+manual DBMS operations easy.

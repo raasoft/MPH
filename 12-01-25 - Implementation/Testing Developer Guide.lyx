@@ -1,0 +1,350 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "MPH Design Document"
+\pdf_author "Alessandro Ditta, Riccardo Ancona"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 4
+\tocdepth 4
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset External
+	template RasterImage
+	filename 200px-Logo_Politecnico_Milano.png
+	width 30page%
+
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+Manage Project Homework:
+\begin_inset Newline newline
+\end_inset
+
+MPH Server Testing Developer Guide
+\end_layout
+
+\begin_layout Author
+Riccardo Ancona - 782025
+\begin_inset Newline newline
+\end_inset
+
+Alessandro Ditta - 781482
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Purpose
+\end_layout
+
+\begin_layout Standard
+This testing developer guide describes how the testing for the MPH Server
+ Module was done by the developer team.
+\end_layout
+
+\begin_layout Subsection
+Scope
+\end_layout
+
+\begin_layout Standard
+The software system to be produced is a projects management tool which will
+ be referred to as Manage Project Homework (MPH) throughout this document.
+\end_layout
+
+\begin_layout Standard
+MPH will allow professors to publish a project description and to define
+ the set of the corresponding deliverables.
+ It will allow students to join project teams and submit deliverables by
+ uploading them into the system.
+\end_layout
+
+\begin_layout Standard
+The professor will also be able to evaluate the project deliverables assigning
+ a score to them and leaving to the system the computation of the final
+ score based on the average of the individual scores.
+ MPH will also provide some information sharing functionalities among different
+ teams.
+\end_layout
+
+\begin_layout Subsection
+Definitions, acronyms, and abbreviations
+\end_layout
+
+\begin_layout Description
+MPH: Manage Project Homework, the software system to be produced.
+\end_layout
+
+\begin_layout Description
+Team: a set of 1, 2 or 3 students who work together on the same project.
+\end_layout
+
+\begin_layout Description
+Admin: the system administrator
+\end_layout
+
+\begin_layout Description
+Deliverable: the model of a tangible object produced as a result of a specific
+ phase of the project.
+\end_layout
+
+\begin_layout Description
+Artifact: the effectively tangible object associated to a deliverable.
+\end_layout
+
+\begin_layout Description
+Deadline: the date by which the artifact associated to a deliverable must
+ be delivered.
+\end_layout
+
+\begin_layout Description
+RASD: Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Description
+DD: Design Document
+\end_layout
+
+\begin_layout Description
+DBMS: DataBase Management System
+\end_layout
+
+\begin_layout Description
+GUI: Graphical User Interface
+\end_layout
+
+\begin_layout Description
+JEE: Java Enterprise Edition
+\end_layout
+
+\begin_layout Subsection
+References
+\end_layout
+
+\begin_layout Itemize
+Description of the project: 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://corsi.metid.polimi.it"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+MPH Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Itemize
+MPH Design Document
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.junit.org/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Getting Help and Giving Feedback
+\end_layout
+
+\begin_layout Subsection
+Do you need help?
+\end_layout
+
+\begin_layout Standard
+If you experience difficulty with a procedure described in this documentation,
+ please feel free to send an email to axxo@hotmail.it.
+ Don't forget to include in the email all the data needed to get support,
+ like a list of action performed and screenshot that shows the error.
+\end_layout
+
+\begin_layout Subsection
+We Need Feedback! 
+\end_layout
+
+\begin_layout Standard
+If you find a typographical error in this manual, or if you have thought
+ of a way to make this manual better, we would love to hear from you! Please
+ submit an email to axxo@hotmail.it.
+ If you have a suggestion for improving the documentation, try to be as
+ specific as possible when describing it.
+ If you have found an error, please include the section number and some
+ of the surrounding text so we can find it easily.
+\end_layout
+
+\begin_layout Section
+Testing Activity
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+All the tests were created and executed in the project "MPH-Server-Test":
+ in this way, it was possible to test the server in a more easily way, without
+ creating some extra adapter classes, since testing a JEE project from the
+ JEE projects itself is in general different from others simple Java projects.
+ The developers used the JUnit framework, even if it was not specifically
+ created to test JEE Entities or Session Beans.
+ Before trying to run the tests, you need to have a CLEAN installation of
+ the MPH Server module, since some of the tests will introduce new data
+ in it.
+ To run a test, select the correspondent Junit class inside Eclipse and
+ run JUnit on that class.
+\end_layout
+
+\begin_layout Subsection
+Unit Testing
+\end_layout
+
+\begin_layout Standard
+The developers of the server module performed unit testing in order to test
+ all the server modules singly.
+ All the unit test use a black box method of testing, and are contained
+ in the package "com.raaxxo.mph.testing.cases".
+\end_layout
+
+\begin_layout Subsection
+Integration Testing
+\end_layout
+
+\begin_layout Standard
+The developer team performed this kind of test extensively throughout the
+ development, from the early start.
+ This tests suites creates some data in the database using all the shared
+ methods and interfaces: in this way, the test is performed as there is
+ some "dummy client" that performs operations and sends commands to the
+ server.
+ In this way, the functionalities of the server module could be tested even
+ if there was no GUI client at all.
+ In all the tests that were developed, the test criteria used was "edge
+ coverage" from a functional point of view: there were created test suites
+ for a specific functionality implemented.
+ Each method inside a functionality was tested with a large number of possible
+ executions, both the ones that executed successfully and the ones that
+ failed and throwed an exception.
+ All the integration testing are contained in the package "com.raaxxo.mph.testing.su
+ites".
+\end_layout
+
+\begin_layout Subsection
+System Testing
+\end_layout
+
+\begin_layout Standard
+The developer team performed this kind of test extensively throughout the
+ development to test the GUI and the integration between server and client
+ module.
+ The system testing was done running and using the client module of the
+ MPH software: the developer team decided to perform the test this way because
+ the JUnit framework was unsuitable to test the GUI and to test deeply some
+ functionalities of the server.
+\end_layout
+
+\end_body
+\end_document

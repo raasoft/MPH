@@ -1,0 +1,10 @@
+Deadline 24 November 2011, 23.59: Requirements analysis and specification document (RASD).
+
+RASD contains description of the use scenarios, the use cases that describe them, and the models describing requirements and specification. You are asked to use a suitable mix of natural language, UML and Alloy. UML and Alloy MUST be part of the documentation. You must also show that you used the Alloy tool for analysis, by reporting the models you obtained by using it. 
+
+Of course, the initial written problem statement we provided above suffers from the typical drawbacks of natural language descriptions: it is informal, incomplete, uses different terms for the same concepts, etc. You may choose to solve the incompleteness and ambiguity as you wish, but be careful to clearly document the choices you make. 
+
+Note: the RASD deadline is very close to the group registration deadline. Do not wait the group registration before starting working at your RASD! Start right after you have defined the project plan and feel free to update the plan as you proceed.
+
+In Brief:
+-Do a RASD document, documenting all the ambiguities.

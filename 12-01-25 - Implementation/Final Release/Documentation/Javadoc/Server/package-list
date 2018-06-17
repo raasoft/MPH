@@ -1,0 +1,9 @@
+com.raaxxo.mph.entities
+com.raaxxo.mph.entities.classids
+com.raaxxo.mph.sessions.local
+com.raaxxo.mph.sessions.remote
+mph.beans.dto
+mph.beans.dto.ids
+mph.beans.exceptions
+mph.beans.sessions
+util

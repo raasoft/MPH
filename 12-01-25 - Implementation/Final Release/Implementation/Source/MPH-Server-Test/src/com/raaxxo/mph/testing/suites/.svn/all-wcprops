@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/135/MPH-Server-Test/src/com/raaxxo/mph/testing/suites
+END
+TestSuite3AddProjects.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/135/MPH-Server-Test/src/com/raaxxo/mph/testing/suites/TestSuite3AddProjects.java
+END
+TestSuite4AddTeams.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/135/MPH-Server-Test/src/com/raaxxo/mph/testing/suites/TestSuite4AddTeams.java
+END
+TestSuite1Login.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/132/MPH-Server-Test/src/com/raaxxo/mph/testing/suites/TestSuite1Login.java
+END
+TestSuite5AddArtifact.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/135/MPH-Server-Test/src/com/raaxxo/mph/testing/suites/TestSuite5AddArtifact.java
+END
+TestSuite2AddCourses.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/132/MPH-Server-Test/src/com/raaxxo/mph/testing/suites/TestSuite2AddCourses.java
+END
+AllTests.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/132/MPH-Server-Test/src/com/raaxxo/mph/testing/suites/AllTests.java
+END

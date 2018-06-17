@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Shared/src/mph/beans/dto
+END
+EntityDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/EntityDTO.java
+END
+ArtifactDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/143/MPH-Shared/src/mph/beans/dto/ArtifactDTO.java
+END
+DeliverableDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/DeliverableDTO.java
+END
+UserDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/UserDTO.java
+END
+DataTransferObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/147/MPH-Shared/src/mph/beans/dto/DataTransferObject.java
+END
+CourseDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/CourseDTO.java
+END
+ProfessorDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ProfessorDTO.java
+END
+IncomingFileDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/IncomingFileDTO.java
+END
+OutcomingFileDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/143/MPH-Shared/src/mph/beans/dto/OutcomingFileDTO.java
+END
+ProjectDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ProjectDTO.java
+END
+TeamDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Shared/src/mph/beans/dto/TeamDTO.java
+END
+PasswordHashDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/PasswordHashDTO.java
+END
+StudentDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/StudentDTO.java
+END

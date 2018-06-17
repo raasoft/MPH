@@ -1,0 +1,1814 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "MPH Client User Guide"
+\pdf_author "Alessandro Ditta, Riccardo Ancona"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 4
+\tocdepth 4
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset External
+	template RasterImage
+	filename 200px-Logo_Politecnico_Milano.png
+	width 30page%
+
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+Manage Project Homework:
+\begin_inset Newline newline
+\end_inset
+
+MPH Client User Guide
+\end_layout
+
+\begin_layout Author
+Riccardo Ancona - 782025
+\begin_inset Newline newline
+\end_inset
+
+Alessandro Ditta - 781482
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Purpose
+\end_layout
+
+\begin_layout Standard
+This installation guide describes the steps that will allow a student or
+ a professor to start the client module of Manage Project Homework
+\end_layout
+
+\begin_layout Standard
+The intended audience of this document includes the students and the professors
+ as well as the prospective developers and mantainers of the tool.
+\end_layout
+
+\begin_layout Subsection
+Definitions, acronyms, and abbreviations
+\end_layout
+
+\begin_layout Description
+MPH: Manage Project Homework, the software system to be produced.
+\end_layout
+
+\begin_layout Description
+Team: a set of 1, 2 or 3 students who work together on the same project.
+\end_layout
+
+\begin_layout Description
+Admin: the system administrator
+\end_layout
+
+\begin_layout Description
+Deliverable: the model of a tangible object produced as a result of a specific
+ phase of the project.
+\end_layout
+
+\begin_layout Description
+Artifact: the effectively tangible object associated to a deliverable.
+\end_layout
+
+\begin_layout Description
+Deadline: the date by which the artifact associated to a deliverable must
+ be delivered.
+\end_layout
+
+\begin_layout Description
+RASD: Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Description
+DD: Design Document
+\end_layout
+
+\begin_layout Description
+DBMS: DataBase Management System
+\end_layout
+
+\begin_layout Description
+GUI: Graphical User Interface
+\end_layout
+
+\begin_layout Description
+RMI: Remote Method Invocation
+\end_layout
+
+\begin_layout Description
+JEE: Java Enterprise Edition
+\end_layout
+
+\begin_layout Description
+UX 
+\series bold
+Diagram:
+\series default
+ User Experience Diagram
+\end_layout
+
+\begin_layout Description
+DTO: Data Transfer Object
+\end_layout
+
+\begin_layout Subsection
+References
+\end_layout
+
+\begin_layout Itemize
+Description of the project: 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://corsi.metid.polimi.it"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Getting Help and Giving Feedback
+\end_layout
+
+\begin_layout Subsection
+Do you need help?
+\end_layout
+
+\begin_layout Standard
+If you experience difficulty with a procedure described in this documentation,
+ please feel free to send an email to axxo@hotmail.it .
+ Don't forget to include in the email all the data needed to get support.
+\end_layout
+
+\begin_layout Subsection
+We Need Feedback! 
+\end_layout
+
+\begin_layout Standard
+If you find a typographical error in this manual, or if you have thought
+ of a way to make this manual better, we would love to hear from you! Please
+ submit an email to axxo@hotmail.it .
+ If you have a suggestion for improving the documentation, try to be as
+ specific as possible when describing it.
+ If you have found an error, please include the section number and some
+ of the surrounding text so we can find it easily.
+\end_layout
+
+\begin_layout Section
+Installation
+\end_layout
+
+\begin_layout Standard
+The client module of the MPH software doesn't need to be installed: just
+ copy the MPH-Client.jar in the server host machine and execute it.
+\end_layout
+
+\begin_layout Subsection
+Requirements
+\end_layout
+
+\begin_layout Standard
+To be executed correctly, the MPH-Client requires a Java Virtual Machine
+ (1.6 or newer) to be installed on the user machine.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Using MPH Client
+\end_layout
+
+\begin_layout Subsection
+Executing the Client in normal Mode
+\end_layout
+
+\begin_layout Standard
+The simpler way to execute the MPH Client is to double click on MPH-Client.jar.
+\end_layout
+
+\begin_layout Subsection
+Executing the Client in Debug Mode
+\end_layout
+
+\begin_layout Standard
+The MPH-Client offers also a debug mode, which can be started by running
+ the 
+\emph on
+MPH-Client-Debug.bat
+\emph default
+ if you are on Windows, or the 
+\emph on
+MPH-Client-Debug.sh
+\emph default
+ if you are on OSX / Linux.
+ Make sure to have full execution rights on these files.
+\end_layout
+
+\begin_layout Standard
+The Debug Mode looks like the normal client but it starts together with
+ a terminal window, which logs runtime exceptions not caught by the application.
+\end_layout
+
+\begin_layout Subsection
+Login
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Login"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the first window that you see executing the MPH-Client.
+ From here a user can login as a Student or as a Professor into the MPH
+ system by entering a valid combination of username and password.
+\end_layout
+
+\begin_layout Standard
+Students have the possibility to create a new account by clicking on the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Register
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/login.PNG
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Student Windows
+\end_layout
+
+\begin_layout Subsubsection
+Registration
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Registration"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Registration window lets a student insert his/her data to create a new
+ account into the MPH system.
+ You are required to choose a unique username and to insert a valid email
+ address.
+ The password must be typed twice in the corresponding fields to ensure
+ more security.
+ The other fields are optional.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/registration.PNG
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Registration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Student Main Window
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Student-Main-Window"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the first window a student see after a successful login.
+ Here you can view and update your personal information which are visible
+ to the other users registered into the MPH system.
+\end_layout
+
+\begin_layout Standard
+On the right you can see the list of all projects you are enrolled in and
+ it notifies if you have any incoming request for a project.
+ By clicking on a project you are taken to the Project Information Window
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Information-Student"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+At the bottom the 
+\begin_inset Quotes eld
+\end_inset
+
+Search Students
+\begin_inset Quotes erd
+\end_inset
+
+ button lets you see personal information about other students (the Student
+ Info Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Students-Info"
+
+\end_inset
+
+), the 
+\begin_inset Quotes eld
+\end_inset
+
+View Projects
+\begin_inset Quotes erd
+\end_inset
+
+ button lets you see the list of available projects grouped by professor
+ and course (the Project Selection Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Selection"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Log Out
+\begin_inset Quotes erd
+\end_inset
+
+ button closes the current session and takes you back to the Login 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Login"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset space \hspace{}
+\length -3.67cm
+\end_inset
+
+
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/student-main.PNG
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Student Main Window
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Students Info
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Students-Info"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This window is composed by two parts: on the left you see the list of all
+ registered students and selecting a student shows their personal information
+ in the panel on the right.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Back
+\begin_inset Quotes erd
+\end_inset
+
+ button takes you back to the Main Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Student-Main-Window"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/students.PNG
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Students Info
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Project Selection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Project-Selection"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the left of this window a tree shows the list of the professors registered
+ into the MPH sytem, they contain the list of courses held by them and each
+ course contains the available projects.
+\end_layout
+
+\begin_layout Standard
+Selecting a professor or a course shows the corresponding information in
+ the panel on the right, instead clicking on a project opens the Project
+ Information Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Information-Professor"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Back
+\begin_inset Quotes erd
+\end_inset
+
+ button takes you back to the Main Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Student-Main-Window"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/selection.PNG
+	width 70page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Project Selection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Project Information
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Project-Information-Student"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This window is a tab which contains the basic information about a project.
+\end_layout
+
+\begin_layout Standard
+On the top of the window you see 3 other tabs: Project Teams 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Teams"
+
+\end_inset
+
+, Team Management 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Team-Management"
+
+\end_inset
+
+, Project Deliverables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Deliverables"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Back
+\begin_inset Quotes erd
+\end_inset
+
+ button takes you back to the Main Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Student-Main-Window"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/project-info.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Project Information
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Project Teams
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Project-Teams"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this tab are listed the teams enrolled in the project, selecting a team
+ displays the set of students belonging to it in the panel on the right.
+\end_layout
+
+\begin_layout Standard
+If you haven't joined a project team yet, from this window, you can select
+ a team and clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Join
+\begin_inset Quotes erd
+\end_inset
+
+ button you can send a membership request to that team (if that team accepts
+ incoming requests).
+ It will have to be accepted by one of the team members in order to let
+ you join the team.
+ You can send more membership requests for the same projects, all of them
+ are listed in the Team Management tab 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Team-Management"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/project-teams.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Project Teams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Team Management
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Team-Management"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you haven't joined a project team yet you will see the list of the out-going
+ join requests you sent on the left.
+ By clicking on a request you can choose to remove it if you have changed
+ your mind.
+\end_layout
+
+\begin_layout Standard
+You also have the possibility to create your own project team by clicking
+ on the 
+\begin_inset Quotes eld
+\end_inset
+
+Create Team
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+ By doing so you will remove your out-going membership requests and you
+ will have access to the team management controls which are explained below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/project-team-management-no.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Team Management Disabled
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once you have joined a project team you will have access to basic team commands.
+\end_layout
+
+\begin_layout Standard
+On the left you will see the list of the incoming membership requests by
+ some other students.
+ Clicking on a request lets you decide to accept or decline it.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Accept Requests
+\begin_inset Quotes erd
+\end_inset
+
+ checkbox lets you decide whether your team should accept incoming join
+ requests or not.
+\end_layout
+
+\begin_layout Standard
+On the right you see the 
+\begin_inset Quotes eld
+\end_inset
+
+Final Score
+\begin_inset Quotes erd
+\end_inset
+
+ label which displays the final score obtained by the project team you belong
+ to.
+ It is grayed until the project ends, once it ends the final score becomes
+ more visible.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Leave Team
+\begin_inset Quotes erd
+\end_inset
+
+ button lets you leave the current project team, if you decide to do so
+ you won't have access anymore to the team controls but you can join another
+ team or create a new one.
+ If you decide to leave and you are the only team member, the team will
+ be removed from the MPH system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/project-team-management-yes.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Team Management Enabled
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Project Deliverables
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Project-Deliverables"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the right of this tab you see the list of deliverables composing the
+ project ordered by deadline date.
+ Selecting a deliverable shows its information in the panel on the right.
+\end_layout
+
+\begin_layout Standard
+If you belong to a project team you can see if there is an artifact uploaded
+ by your team for the selected deliverable and check the score given to
+ it by the professor.
+ You can also upload a new artifact for the selected deliverable by clicking
+ on the 
+\begin_inset Quotes eld
+\end_inset
+
+Upload Artifact
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+ If there is already an artifact for the selected deliverable the new artifact
+ will replace the old one.
+ The maximum file size to upload is currently set to 10 MegaBytes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/studentGUI/project-deliverables.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Project Deliverables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Professor Windows
+\end_layout
+
+\begin_layout Subsubsection
+Professor Main Window
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Professor-Main-Window"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the first window a professor see after a successful login.
+ Here you can view and update your personal information which are visible
+ to the students registered into the MPH system.
+\end_layout
+
+\begin_layout Standard
+On the right you can see the list of all projects you have published ordered
+ by course.
+ By clicking on a project you are taken to the Project Information Window
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Information-Professor"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+At the bottom the 
+\begin_inset Quotes eld
+\end_inset
+
+Create Project
+\begin_inset Quotes erd
+\end_inset
+
+ button lets you create and publish a new project (the New Project Window
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:New-Project"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Log Out
+\begin_inset Quotes erd
+\end_inset
+
+ button closes the current session and takes you back to the Login 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Login"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/professorGUI/professor-main.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor Main Window
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+New Project
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:New-Project"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This window contains editable fields with the project information.
+ In order to publish a new project into the MPH system every field must
+ filled with consistent data such as a title, start date, end date and project
+ description.
+\end_layout
+
+\begin_layout Standard
+Every project must contain at least one deliverable.
+ To create a new deliverable for the project to be published you must click
+ on the 
+\begin_inset Quotes eld
+\end_inset
+
+New Deliverable
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+ By doing so the deliverable fields become editable and they are marked
+ with a yellow background.
+ To add the deliverable click on the 
+\begin_inset Quotes eld
+\end_inset
+
+Add Deliverable
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+ The delay penalty is the value that penalizes late artifacts for every
+ day of delay.
+\end_layout
+
+\begin_layout Standard
+In the panel on the right bottom there is the list of all project deliverables
+ you have created.
+ To view the deliverable information you must select a deliverable, the
+ information will be shown in the deliverable fields.
+ Once you have selected a deliverable in the list you can also remove it
+ by clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Remove
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Back
+\begin_inset Quotes erd
+\end_inset
+
+ button takes you back to the Main Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Professor-Main-Window"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/professorGUI/new-project.PNG
+	width 70page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+New Project
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Project Information
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Project-Information-Professor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This window is a tab which contains the basic information about a project.
+\end_layout
+
+\begin_layout Standard
+On the top of the window you see 2 other tabs: Project Teams 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Teams-Professor"
+
+\end_inset
+
+, Team Management 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Team-Management"
+
+\end_inset
+
+, Project Deliverables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Deliverables-Professor"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Back
+\begin_inset Quotes erd
+\end_inset
+
+ button takes you back to the Main Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Professor-Main-Window"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/professorGUI/project-info.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Project Information
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Project Teams
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Project-Teams-Professor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this tab are listed the teams enrolled in the project, selecting a team
+ displays the set of students belonging to it in the panel on the right.
+ Selecting a student opens a dialog containing the student personal information.
+\end_layout
+
+\begin_layout Standard
+The panel on the right displays also the final score of the selected team.
+ A gray score means the project is not ended yet so the score is not definitive
+ yet.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+Get Artifacts
+\begin_inset Quotes erd
+\end_inset
+
+ button opens the Artifacts Window which contains all artifacts delivered
+ by the selected team 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Artifacts"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/professorGUI/project-teams.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Project Teams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Project Deliverables
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Project-Deliverables-Professor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this tab are listed the deliverables contained in the project, selecting
+ a deliverable displays all the deliverable information in the panel on
+ the right.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Get Artifacts
+\begin_inset Quotes erd
+\end_inset
+
+ button opens the Artifacts Window which contains all artifacts corresponding
+ to the selected deliverable uploaded by all project teams
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Artifacts"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/professorGUI/project-deliverables.PNG
+	width 70page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Project Deliverables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Artifacts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Artifacts"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Depending on the choice made before this window contains a list of all artifacts
+ delivered by a single team or the artifacts delivered by every project
+ team for the same deliverable.
+\end_layout
+
+\begin_layout Standard
+If you click on an artifact, its information are displayed in the panel
+ on the right.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+Download
+\begin_inset Quotes erd
+\end_inset
+
+ button lets you download the selected artifact and save it into your file
+ system.
+\end_layout
+
+\begin_layout Standard
+As a professor you can evaluate the delivered artifacts, to do so you must
+ type or select a value between 1 and 10 in the 
+\begin_inset Quotes eld
+\end_inset
+
+Score
+\begin_inset Quotes erd
+\end_inset
+
+ spinner and clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Set Score
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+ Only valid scores will be saved into the MPH system.
+\end_layout
+
+\begin_layout Standard
+Once you set a score for an artifact the system will calculate its final
+ score which is the score set minus the number of days of delay multiplied
+ for the deliverable delay penalty.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Back
+\begin_inset Quotes erd
+\end_inset
+
+ button takes you back to the Project Information Window 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Project-Information-Professor"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename Client Guide Images/professorGUI/artifacts.PNG
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Artifacts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

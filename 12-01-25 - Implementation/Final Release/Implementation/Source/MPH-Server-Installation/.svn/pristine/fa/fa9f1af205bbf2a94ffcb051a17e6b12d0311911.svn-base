@@ -1,0 +1,9 @@
+package com.raaxxo.mph.installation.logic;
+
+public class InstallationErrorException extends Exception {
+
+	public InstallationErrorException(String theMessage) {
+		super(theMessage);
+	}
+	
+}

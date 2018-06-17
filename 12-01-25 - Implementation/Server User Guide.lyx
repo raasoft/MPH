@@ -1,0 +1,1033 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "MPH Design Document"
+\pdf_author "Alessandro Ditta, Riccardo Ancona"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 4
+\tocdepth 4
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset External
+	template RasterImage
+	filename 200px-Logo_Politecnico_Milano.png
+	width 30page%
+
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+Manage Project Homework:
+\begin_inset Newline newline
+\end_inset
+
+MPH Server User Guide
+\end_layout
+
+\begin_layout Author
+Riccardo Ancona - 782025
+\begin_inset Newline newline
+\end_inset
+
+Alessandro Ditta - 781482
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Purpose
+\end_layout
+
+\begin_layout Standard
+This installation guide describes the steps that will allow the system administr
+ator to start the server module of Manage Project Homework
+\end_layout
+
+\begin_layout Standard
+The intended audience of this document includes the system administrator
+ as well as the prospective developers and maintainers of the tool.
+\end_layout
+
+\begin_layout Subsection
+Scope
+\end_layout
+
+\begin_layout Standard
+The software system to be produced is a projects management tool which will
+ be referred to as Manage Project Homework (MPH) throughout this document.
+\end_layout
+
+\begin_layout Standard
+MPH will allow professors to publish a project description and to define
+ the set of the corresponding deliverables.
+ It will allow students to join project teams and submit deliverables by
+ uploading them into the system.
+\end_layout
+
+\begin_layout Standard
+The professor will also be able to evaluate the project deliverables assigning
+ a score to them and leaving to the system the computation of the final
+ score based on the average of the individual scores.
+ MPH will also provide some information sharing functionalities among different
+ teams.
+\end_layout
+
+\begin_layout Subsection
+Definitions, acronyms, and abbreviations
+\end_layout
+
+\begin_layout Description
+MPH: Manage Project Homework, the software system to be produced.
+\end_layout
+
+\begin_layout Description
+Team: a set of 1, 2 or 3 students who work together on the same project.
+\end_layout
+
+\begin_layout Description
+Admin: the system administrator
+\end_layout
+
+\begin_layout Description
+Deliverable: the model of a tangible object produced as a result of a specific
+ phase of the project.
+\end_layout
+
+\begin_layout Description
+Artifact: the effectively tangible object associated to a deliverable.
+\end_layout
+
+\begin_layout Description
+Deadline: the date by which the artifact associated to a deliverable must
+ be delivered.
+\end_layout
+
+\begin_layout Description
+RASD: Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Description
+DD: Design Document
+\end_layout
+
+\begin_layout Description
+DBMS: DataBase Management System
+\end_layout
+
+\begin_layout Description
+GUI: Graphical User Interface
+\end_layout
+
+\begin_layout Description
+JEE: Java Enterprise Edition
+\end_layout
+
+\begin_layout Subsection
+References
+\end_layout
+
+\begin_layout Itemize
+Description of the project: 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://corsi.metid.polimi.it"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+MPH Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Itemize
+MPH Design Document
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dev.mysql.com/doc/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dev.mysql.com/doc/workbench/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.jboss.org/jbossas"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Getting Help and Giving Feedback
+\end_layout
+
+\begin_layout Subsection
+Do you need help?
+\end_layout
+
+\begin_layout Standard
+If you experience difficulty with a procedure described in this documentation,
+ please feel free to send an email to axxo@hotmail.it.
+ Don't forget to include in the email all the data needed to get support,
+ like a list of action performed, the log of the server module and screenshot
+ that shows the error.
+\end_layout
+
+\begin_layout Subsection
+We Need Feedback! 
+\end_layout
+
+\begin_layout Standard
+If you find a typographical error in this manual, or if you have thought
+ of a way to make this manual better, we would love to hear from you! Please
+ submit an email to axxo@hotmail.it.
+ If you have a suggestion for improving the documentation, try to be as
+ specific as possible when describing it.
+ If you have found an error, please include the section number and some
+ of the surrounding text so we can find it easily.
+\end_layout
+
+\begin_layout Section
+Pre-Installation
+\end_layout
+
+\begin_layout Subsection
+Obtaining required tools and third-part software
+\end_layout
+
+\begin_layout Standard
+To install the server module of the MPH software, are required the following
+ files:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Java SE Runtime Environment 6
+\series default
+ available for download at the following link: 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.oracle.com/.../index.html"
+target "http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+MySQL Community Server 5.5.20
+\series default
+, available for download at the following link: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dev.mysql.com/downloads/mysql/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+MySQL Workbench 5.2.37
+\series default
+, available for download at the following link: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.mysql.com/downloads/workbench/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+JBOSS Application Server 6.1.0 Final
+\series default
+, available for download at the following link: 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://download.jboss.org/.../jboss-as-distribution-6.1.0.Final.zip"
+target "http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The "
+\series bold
+MPH-Server-Installer.jar
+\series default
+" file provided in the same directory of this document.
+\end_layout
+
+\begin_layout Subsection
+Installing required tools and third-part software
+\end_layout
+
+\begin_layout Standard
+To install the MPH server module, you need to install and configure some
+ required external tools.
+ You need to install, in this order:
+\end_layout
+
+\begin_layout Itemize
+Java SE Runtime Environment 6
+\end_layout
+
+\begin_layout Itemize
+MySQL Community Server 5.5.20
+\end_layout
+
+\begin_layout Itemize
+MySQL Workbench 5.2.37
+\end_layout
+
+\begin_layout Itemize
+JBoss Application Server 6.1.0 Final
+\end_layout
+
+\begin_layout Standard
+BE SURE TO HAVE FULL ADMINISTRATION PERMISSIONS on the host where you will
+ install MPH Server, otherwise you may have some problems during the install
+ or setup of software.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Installing Java SE Runtime Environment 6
+\end_layout
+
+\begin_layout Standard
+In order to install Java SE Runtime Environment 6, please refer to the official
+ oracle guide at 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://java.com/en/.../index_installing.xml"
+target "http://java.com/en/download/help/index_installing.xml"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Installing MySQL Community Server and MySQL Workbench 5.2.37
+\end_layout
+
+\begin_layout Standard
+In order to install MySQL Community Server 5.5.20, please refer to the official
+ guide at 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/.../installing.html"
+target "http://dev.mysql.com/doc/refman/5.5/en/installing.html"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+By default, MySQL Community Server has no password for the "root" user (the
+ user used by MPH).
+ If requested, choose for the "root" user the password "", that is no password.
+ You don't need additional custom configuration.
+ If you have already installed MySQL and you want to use your installed
+ version, verify that the user "root" is created in the database with global
+ permission on the whole database, and that there is no password for that
+ user.
+ If you're unsure about what password the user "root" have, reset it following
+ this guide at 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/.../resetting-permissions.html"
+target "http://dev.mysql.com/doc/refman/5.0/en/resetting-permissions.html"
+
+\end_inset
+
+.
+ If you want to change this guidelines and use your own user and password,
+ AFTER installing MPH Server module (instructions are given in the section
+ 4 of this document) edit the 
+\series bold
+mysql-ds.xml
+\series default
+ file as wanted following the guide at 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://docs.jboss.org/....e_configuration_schema"
+target "http://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/Connectors_on_JBoss-Configuring_JDBC_DataSources.html#Configuring_JDBC_DataSources-The_XA_DataSource_configuration_schema"
+
+\end_inset
+
+ editing the password username and password attributes (the file is located
+ in the 
+\emph on
+server/default/deploy
+\emph default
+ directory of you JBoss installation).
+\end_layout
+
+\begin_layout Standard
+When you finished install the server, you need to install the MySQL Workbench
+ tool.
+ 
+\end_layout
+
+\begin_layout Standard
+To accomplish this, refer to the official guide at 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/.../wb-installing.html"
+target "http://dev.mysql.com/doc/workbench/en/wb-installing.html"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Starting MySQL Community Server 5.5.20
+\end_layout
+
+\begin_layout Standard
+In order to start the MySQL server, please start MySQL Workbench tool.
+ Then create a new "
+\emph on
+administrator server instance
+\emph default
+" following
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/.../wb-server-administration-new-server-instance.html"
+target "http://dev.mysql.com/doc/workbench/en/wb-installing.htmlhttp://dev.mysql.com/doc/workbench/en/wb-server-administration-new-server-instance.html"
+
+\end_inset
+
+ specifying "localhost" as 
+\emph on
+Host
+\emph default
+ 
+\emph on
+Machine
+\emph default
+ and changing the setting the server settings like the ones set up when
+ installing the mysql server (typically you need only to set the correct
+ username and password for the user).
+ Then you need to let the server handle files bigger than 1 megabytes.
+ To do so, you need to open the administrator server instance just created,
+ click on the 
+\emph on
+Option File
+\emph default
+ entry under 
+\emph on
+Configuration
+\emph default
+ section like like shown in 
+\begin_inset CommandInset href
+LatexCommand href
+name "this webpage"
+target "http://dev.mysql.com/.../wb-manage-server-configuration-tab.html"
+
+\end_inset
+
+, then select the 
+\emph on
+Networking 
+\emph default
+tab, then click on "max_allowed_packet" check box and write the value "11M"
+ without quotes.
+ After this, click on the 
+\emph on
+Startup / Shutdown
+\emph default
+ entry under the 
+\emph on
+Management
+\emph default
+ section, then click 
+\emph on
+Start Server 
+\emph default
+like shown in 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/.../wb-manage-server-startup-tab.html"
+target "http://dev.mysql.com/doc/workbench/en/wb-manage-server-startup-tab.html"
+
+\end_inset
+
+
+\emph on
+.
+\end_layout
+
+\begin_layout Subsubsection
+Setting up the MySQL Community Server 5.5.20
+\end_layout
+
+\begin_layout Standard
+In order to let MPH work properly, you need to create a new schema within
+ the mysql server, called "mph".
+ Before create a new schema, you have to create a new database connection.
+ To create a new database connection , follow follow 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/...development.html"
+target "http://dev.mysql.com/doc/workbench/en/wb-sql-development.html"
+
+\end_inset
+
+ remembering that the mysql server started at "127.0.0.1:3306" with the user
+ and password selected at installation time.
+ Once you have created a database connection for the database,can create
+ a new schema this from the command line or, more preferably ,using the
+ MySQL Workbench following 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/.....rowser.html"
+target "http://dev.mysql.com/doc/workbench/en/wb-sql-editor-object-browser.html"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Installing JBOSS Application Server 6.1.0 Final
+\end_layout
+
+\begin_layout Standard
+To install JBOSS Application Server, simply extract the downloaded archive
+ into a directory WITHOUT SPACES.
+ It is very important that the path pointing the JBOSS directory doesn't
+ contain spaces: otherwise, JBOSS won't start.
+\end_layout
+
+\begin_layout Section
+Installation
+\end_layout
+
+\begin_layout Subsection
+MPH Server installation
+\end_layout
+
+\begin_layout Standard
+To install MPH server module, you need to register the MPH server application
+ to the JBOSS Application Server.
+ To do this, run the 
+\emph on
+MPH-Server-Installer.bat
+\emph default
+ if you are on Windows, or the 
+\emph on
+MPH-Server-Installer.sh
+\emph default
+ if you are on OSX / Linux.
+ Make sure to have full execution rights on these files.
+ Then choose the path where is located the "bin" directory of the JBOSS
+ Application Server by clicking the 
+\emph on
+Browse 
+\emph default
+button.
+ Then click the 
+\emph on
+Install 
+\emph default
+button.
+ Now you have installed correctly the MPH Server.
+\end_layout
+
+\begin_layout Section
+Using MPH Server
+\end_layout
+
+\begin_layout Subsection
+Starting the server
+\end_layout
+
+\begin_layout Standard
+To start the MPH server module, you need to open the 
+\emph on
+bin 
+\emph default
+directory of your JBOSS installation directory, then execute the 
+\emph on
+run.bat
+\emph default
+ file if you are on windows or the 
+\emph on
+run.sh
+\emph default
+ file if you are on OSX / Linux.
+ 
+\end_layout
+
+\begin_layout Standard
+From now on, the server will accept incoming connections, and students and
+ professors could log in into the MPH system.
+\end_layout
+
+\begin_layout Subsection
+Stopping the server
+\end_layout
+
+\begin_layout Standard
+To stop the MPH server module, you need to open the 
+\emph on
+bin 
+\emph default
+directory of your JBOSS installation directory in a terminal window, then
+ execute the command 
+\emph on
+shutdown.bat -S
+\emph default
+ if you are on windows or the command
+\emph on
+ ./shutdown.sh -S
+\emph default
+ if you are on OSX / Linux.
+ 
+\end_layout
+
+\begin_layout Standard
+From now on, the server will stop incoming connections, and students and
+ professors cannot log in into the MPH system no more.
+\end_layout
+
+\begin_layout Subsection
+Inserting or editing data
+\end_layout
+
+\begin_layout Standard
+To insert or edit data within the database, the system administrator needs
+ to insert/edit some table's rows or attributes.
+ To do so, he/she can use the command line, or use the MySQL Workbench tool:
+ using the latter is very recommended, since is more intuitive but still
+ powerful (you can still add sql statements from MySQL Workbench).
+ To learn how to modify data with MySQL Workbench, you can follow 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://dev.mysql.com/.../wb-sql-editor.html"
+target "http://dev.mysql.com/doc/workbench/en/wb-sql-editor.html"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+VERY IMPORTANT: to know how to modify in a safe way the MPH database, 
+\bar under
+please refer to the Database section of the Design Document
+\bar default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that each professor cannot register itself into the software, nor create
+ a new course.
+ For this reason, are presented now in a detailed way the two main actions
+ that a system administrator must follow in order to insert a new professor
+ and a new course.
+ Other entity or relationship editing is quite obvious, and then are is
+ listed here: please refer to the Database section of the Design Document
+ for further information or feel free to send an email to the axxo@hotmail.it.
+\end_layout
+
+\begin_layout Subsubsection
+Inserting a new professor or student
+\end_layout
+
+\begin_layout Standard
+The system administrator can add a new professor or student simply inserting
+ a new row in the table 
+\emph on
+Professor 
+\emph default
+or in the table
+\emph on
+ Student.
+ 
+\emph default
+It is remarkable that the 
+\emph on
+Password
+\emph default
+ attribute is the MD5 hash of the real password, for security reason.
+ Then the system administrator should then use a MD5 hash generator like
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.md5.cz/"
+
+\end_inset
+
+free online MD5 hash tool to obtain the hash of the real password and store
+ that hash in the 
+\emph on
+Password
+\emph default
+ attribute.
+ Note that the MD5 hash must contain ONLY LOWERCASE letters.
+\end_layout
+
+\begin_layout Standard
+For example, let's add a new professor "raaxxo" with password "test", date
+ of birth "2012-01-01", email "raaxxo@raaxxo.com", called "Bob Raaxxo" and
+ with telephone number "123456".
+\end_layout
+
+\begin_layout Standard
+First of all obtain the MD5 hash of the string "test" (without quotations).
+ Once got the hash (that is 098f6bcd4621d373cade4e832627b4f6) you can insert
+ a new professor using this SQL statement
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+if you are experiencing problems about quotations when inserting this SQL
+ statements, try to rewrite this statement from scratch instead of copy
+ and paste it
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset listings
+lstparams "basicstyle={\ttfamily},breaklines=true,language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO mph.Professor (Username,Birthday,Email,FirstName,LastName,Password,Te
+lephoneNumber) VALUES ("raaxxo", "2012-01-01", "raaxxo@raaxxo.com", "Bob",
+ "Raaxxo", "098f6bcd4621d373cade4e832627b4f6", "123456"); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you want to insert a new Student, simply change 
+\end_layout
+
+\begin_layout LyX-Code
+mph.Professor
+\end_layout
+
+\begin_layout Standard
+in 
+\end_layout
+
+\begin_layout LyX-Code
+mph.Student 
+\end_layout
+
+\begin_layout Standard
+at the begin of the statement.
+\end_layout
+
+\begin_layout Subsubsection
+Inserting a new course
+\end_layout
+
+\begin_layout Standard
+The system administrator can add a new course simply inserting two new rows
+ to the schema: one in the table 
+\emph on
+Course 
+\emph default
+and one in the table 
+\emph on
+Professor_Course.
+ 
+\emph default
+A course can be added only after the professor that hold the Course was
+ created.
+ For example, if you want to add a new course held by professor "raaxxo",
+ you can use this SQL statement
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+if you are experiencing problems about quotations when inserting this SQL
+ statements, try to rewrite this statement from scratch instead of copy
+ and paste it
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset listings
+lstparams "basicstyle={\ttfamily},breaklines=true,language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO mph.Course (Uid, Description, Name, Professor) VALUES ( 1, "CourseDes
+cription", "CourseName", "raaxxo"); 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+INSERT INTO mph.Professor_Course (Professor_Username, coursesHolded_Uid)
+ VALUES ("raaxxo", 1); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Inserting a new project
+\end_layout
+
+\begin_layout Standard
+The system administrator can add a new course simply inserting a new row
+ in the table 
+\emph on
+Project.
+ 
+\emph default
+A project can be added only after the course that holds it was created.
+\end_layout
+
+\begin_layout Subsubsection
+Inserting a new deliverable
+\end_layout
+
+\begin_layout Standard
+The system administrator can add a new deliverable simply inserting two
+ new rows to the schema: one in the table 
+\emph on
+Deliverable 
+\emph default
+and one in the table 
+\emph on
+Project_Deliverable.
+ 
+\emph default
+A deliverable can be added only after the project that it belongs to was
+ created.
+\end_layout
+
+\begin_layout Subsubsection
+Inserting a new team
+\end_layout
+
+\begin_layout Standard
+The system administrator can add a new team simply inserting two new rows
+ to the schema: one in the table 
+\emph on
+Team 
+\emph default
+and one in the table 
+\emph on
+Project_Team.
+ 
+\emph default
+A deliverable can be added only after the project that it belongs to was
+ created.
+\end_layout
+
+\begin_layout Subsubsection
+Inserting a new team membership request
+\end_layout
+
+\begin_layout Standard
+The system administrator can add a new team membership request simply inserting
+ a row in the table 
+\emph on
+StudentRequestMembership
+\emph default
+.
+ A membership request can be added only after the student and the team were
+ created.
+\end_layout
+
+\begin_layout Subsubsection
+Enrolling a student to a team
+\end_layout
+
+\begin_layout Standard
+The system administrator can enroll a student to a team simply inserting
+ one new row in the table 
+\emph on
+StudentBelongsTeam.
+ 
+\emph default
+A student can be enrolled in a team only after the team was created.
+\end_layout
+
+\begin_layout Subsubsection
+Inserting a new artifact 
+\end_layout
+
+\begin_layout Standard
+The system administrator can add a new artifact to a team simply inserting
+ two three rows to the schema: one in the table 
+\emph on
+Artifact
+\emph default
+, one in the table 
+\emph on
+Deliverable_Artifact 
+\emph default
+and one in the table 
+\emph on
+Team_Artifact.
+ 
+\emph default
+An artifact can be added only after the deliverable and the team that it
+ belongs to was created.
+\end_layout
+
+\end_body
+\end_document

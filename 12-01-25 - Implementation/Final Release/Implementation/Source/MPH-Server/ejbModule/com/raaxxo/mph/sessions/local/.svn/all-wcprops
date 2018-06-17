@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/175/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local
+END
+EntityUtility.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/163/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/EntityUtility.java
+END
+ProjectManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/175/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/ProjectManager.java
+END
+ArtifactManagerLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/ArtifactManagerLocal.java
+END
+CourseManagerLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/CourseManagerLocal.java
+END
+UserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/UserManager.java
+END
+DeliverableManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/135/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/DeliverableManager.java
+END
+ProfessorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/175/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/ProfessorFactory.java
+END
+EntityUtilityLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/EntityUtilityLocal.java
+END
+ProjectManagerLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/ProjectManagerLocal.java
+END
+StudentFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/173/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/StudentFactory.java
+END
+UserFactoryLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/128/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/UserFactoryLocal.java
+END
+TeamManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/175/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/TeamManager.java
+END
+UserManagerLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/173/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/UserManagerLocal.java
+END
+DeliverableManagerLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/DeliverableManagerLocal.java
+END
+ProfessorFactoryLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/ProfessorFactoryLocal.java
+END
+ManagerLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/148/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/ManagerLocal.java
+END
+ArtifactManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/175/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/ArtifactManager.java
+END
+StudentFactoryLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/StudentFactoryLocal.java
+END
+CourseManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/135/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/CourseManager.java
+END
+TeamManagerLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/169/MPH-Server/ejbModule/com/raaxxo/mph/sessions/local/TeamManagerLocal.java
+END

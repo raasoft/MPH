@@ -1,0 +1,204 @@
+package com.raaxxo.mph.installation.gui;
+
+import java.awt.BorderLayout;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
+import com.raaxxo.mph.installation.logic.InstallationErrorException;
+import com.raaxxo.mph.installation.logic.InstallationUtility;
+
+/**
+ * This GUI class installs the files required to run the MPH server in the JBoss folder.<br/>
+ * It extends {@link JFrame}.
+ */
+public class InstallationScreen extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textFieldJBossFolder;
+	
+	private String path = null;
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					for (LookAndFeelInfo info : UIManager
+							.getInstalledLookAndFeels()) {
+						if ("Nimbus".equals(info.getName())) {
+							UIManager.setLookAndFeel(info.getClassName());
+							break;
+						}
+					}
+					new InstallationScreen().setVisible(true);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public InstallationScreen() {
+		setTitle("MPH - Server Installer");
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		setLocationRelativeTo(null);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JPanel panelTop = new JPanel();
+		contentPane.add(panelTop);
+		
+		JLabel lblNewLabel = new JLabel("MPH - Server Installer");
+		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 30));
+		panelTop.add(lblNewLabel);
+		
+		JPanel panelCenter = new JPanel();
+		contentPane.add(panelCenter);
+		
+		JLabel lblSelectFolder = new JLabel("Type the path of the \" /bin \" folder of your JBoss server. Example: jboss/bin");
+		panelCenter.add(lblSelectFolder);
+		
+		JPanel panelFolderSelection = new JPanel();
+		panelCenter.add(panelFolderSelection);
+		
+		textFieldJBossFolder = new JTextField();
+		panelFolderSelection.add(textFieldJBossFolder);
+		textFieldJBossFolder.setColumns(25);
+		
+		JButton btnBrowse = new JButton("Browse");
+		btnBrowse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/* Get the JBoss server folder */
+				JFileChooser fc = new JFileChooser();
+				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				
+				int returnVal = fc.showOpenDialog(getContentPane());
+
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					File pathFile = fc.getSelectedFile();
+					path = pathFile.getAbsolutePath();
+					textFieldJBossFolder.setText(path);
+				}
+			}
+		});
+		panelFolderSelection.add(btnBrowse);
+		
+		JPanel panelBottom = new JPanel();
+		contentPane.add(panelBottom);
+		panelBottom.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panelButtons = new JPanel();
+		panelBottom.add(panelButtons, BorderLayout.SOUTH);
+		panelButtons.setLayout(new GridLayout(0, 2, 50, 0));
+		
+		final JButton btnInstall = new JButton("Install");
+		btnInstall.setEnabled(false);
+		btnInstall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				int choice = JOptionPane.showConfirmDialog(getContentPane(), "Are you sure to install the MPH Server?", "Confirm Install", JOptionPane.YES_NO_OPTION);
+				if (choice == JOptionPane.YES_OPTION) {
+					try {
+						getRootPane().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+						InstallationUtility.getInstance().setInputPath(textFieldJBossFolder.getText());
+						InstallationUtility.getInstance().runInstallation();
+						JOptionPane.showMessageDialog(getContentPane(), "MPH-Server installed successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+						dispose();
+					} catch (FileNotFoundException e) {
+						JOptionPane.showMessageDialog(getContentPane(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+					} catch (InstallationErrorException e) {
+						JOptionPane.showMessageDialog(getContentPane(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+					} finally {
+						getRootPane().setCursor(Cursor.getDefaultCursor());
+					}
+				}
+			}
+		});
+		btnInstall.setPreferredSize(new Dimension(100, 28));
+		panelButtons.add(btnInstall);
+		
+		JButton btnExit = new JButton("Cancel");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int choice = JOptionPane.showConfirmDialog(getContentPane(), "Are you sure to exit the MPH Installation Wizard?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+				if (choice == JOptionPane.YES_OPTION) {
+					dispose();
+				}
+			}
+		});
+		panelButtons.add(btnExit);
+		
+		/*
+		 * Enable the "Install" button if and only if the the JBoss server path is set
+		 */
+		DocumentListener pathSetListener = new DocumentListener(){
+			  public void changedUpdate(DocumentEvent e) {
+				    check();
+				  }
+				  public void removeUpdate(DocumentEvent e) {
+				    check();
+				  }
+				  public void insertUpdate(DocumentEvent e) {
+				    check();
+				  }
+
+				  private void check() {
+					  btnInstall.setEnabled(false);
+					  
+					  if (textFieldJBossFolder.getText() == null) {
+						  return;
+					  }
+					  
+					  if (textFieldJBossFolder.getText().length() <= 2) {
+						  return;
+					  }
+					  
+					  try {
+						  InstallationUtility.getInstance().setInputPath(textFieldJBossFolder.getText());
+						  btnInstall.setEnabled(true);
+					  }
+					  catch (Exception e) {  
+						  JOptionPane.showMessageDialog(getContentPane(), e.getMessage(), "Warning", JOptionPane.WARNING_MESSAGE);
+						  btnInstall.setEnabled(false);
+					  }
+				  }
+				};
+		textFieldJBossFolder.getDocument().addDocumentListener(pathSetListener);			
+
+		/* Highlight the "Browse" button */
+		getRootPane().setDefaultButton(btnBrowse);
+	}
+
+}

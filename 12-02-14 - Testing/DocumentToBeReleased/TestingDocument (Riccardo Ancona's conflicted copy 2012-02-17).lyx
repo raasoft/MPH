@@ -1,0 +1,8086 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "MPH Design Document"
+\pdf_author "Alessandro Ditta, Riccardo Ancona"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 4
+\tocdepth 4
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset External
+	template RasterImage
+	filename 200px-Logo_Politecnico_Milano.png
+	width 30page%
+
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+Manage Project Homework:
+\begin_inset Newline newline
+\end_inset
+
+User Acceptance Test Document of the project Ferraris Monti Morelli
+\end_layout
+
+\begin_layout Author
+Riccardo Ancona - 782025
+\begin_inset Newline newline
+\end_inset
+
+Alessandro Ditta - 781482
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Purpose
+\end_layout
+
+\begin_layout Standard
+The purpose of this document is to check whether the MPH system implementation
+ developed by the Ferraris Monti Morelli team meets the requirement of the
+ given specification and if the end-user can accept or not the system developed.
+\end_layout
+
+\begin_layout Subsection
+Definitions, acronyms, and abbreviations
+\end_layout
+
+\begin_layout Description
+MPH: Manage Project Homework, the software system to be produced.
+\end_layout
+
+\begin_layout Description
+Team: a set of 1, 2 or 3 students who work together on the same project.
+\end_layout
+
+\begin_layout Description
+Admin: the system administrator
+\end_layout
+
+\begin_layout Description
+Release: the model of a tangible object produced as a result of a specific
+ phase of the project.
+\end_layout
+
+\begin_layout Description
+Deadline: the date by which the artifact associated to a deliverable must
+ be delivered.
+\end_layout
+
+\begin_layout Description
+RASD: Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Description
+DD: Design Document
+\end_layout
+
+\begin_layout Description
+DBMS: DataBase Management System
+\end_layout
+
+\begin_layout Description
+GUI: Graphical User Interface
+\end_layout
+
+\begin_layout Subsection
+References
+\end_layout
+
+\begin_layout Itemize
+Description of the project: 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://corsi.metid.polimi.it"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+MPH RASD
+\end_layout
+
+\begin_layout Itemize
+MPH DD
+\end_layout
+
+\begin_layout Itemize
+Carlo Ghezzi, Mehdi Jazayeri, Dino Mandrioli, Ingegneria del Software -
+ Fondamenti e Prinicipi, Pearson Education Italia, 2004
+\end_layout
+
+\begin_layout Itemize
+Test Plan Guide by David Bowma: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.information-management-architect.com/user-acceptance-testing.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Documentation Analysis
+\end_layout
+
+\begin_layout Subsection
+Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Subsubsection
+Overall Analysis
+\end_layout
+
+\begin_layout Standard
+The RASD was documented quite well: stakeholders are correctly specified,
+ as well as their functions and relationships.
+ In general, is easy to see which are the functions that the software implements.
+ On the other hand, about the negative aspects, it is possible to find some
+ defections both in the static and dynamic analysis: 
+\end_layout
+
+\begin_layout Itemize
+Static Analysis
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use Cases:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+titles are not always an active verb phrase
+\end_layout
+
+\begin_layout Itemize
+some pre-conditions are too weak (for example, in the 
+\emph on
+Login 
+\emph default
+use case there is no assumption whether the user was already registered
+ in the system or not, in the 
+\emph on
+Mark a Release
+\emph default
+ use case there is no assumption about a professor has already closed the
+ uploads for a particular release or not)
+\end_layout
+
+\begin_layout Itemize
+some use cases does not respect the behavior experienced during runtime
+ testing (see coherence with the software implementation subsection below
+ for more information).
+  
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Dynamic Analysis:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sequence Diagrams
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+most of them are oversimplified: most passages have just been skipped (for
+ example the 
+\emph on
+Professor Evaluate Release
+\emph default
+ lacks of the closure of release uploads action ) or too simply modeled
+ (for example in the
+\emph on
+ Student Registration
+\emph default
+ diagram, the loop condition is too weak comparing to the experienced testing
+ results).
+\end_layout
+
+\begin_layout Itemize
+even if they are able to give an overview of what are the steps that the
+ user must perform, they do not clarify which are the responsibility of
+ each system actor, because the mph system is simply combined all in a single
+ actor "system".
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Active Diagrams
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\emph on
+evaluate release
+\emph default
+ activity diagram is not clear, but it is a central point in the entire
+ system and needs more detail.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection
+Coherence with the software implementation
+\end_layout
+
+\begin_layout Standard
+The administrator functionalities "Delete professor", "Delete student" and
+ "Delete team" listed in the document were not implemented.
+\end_layout
+
+\begin_layout Standard
+In order to insert an administrator into the system, the administrator must
+ be inserted manually into the database, but is not written anywhere in
+ the RASD.
+\end_layout
+
+\begin_layout Standard
+If a student want to upload a new file for a release, if he/she already
+ uploaded a file for that release he/she cannot upload a new one, but this
+ behavior is not written anywhere in the RASD.
+\end_layout
+
+\begin_layout Standard
+The professor can mark a release only after having stopped the possibility
+ to upload new releases, but this behavior is not written anywhere in the
+ RASD.
+\end_layout
+
+\begin_layout Subsection
+Design Document
+\end_layout
+
+\begin_layout Subsubsection
+Overall Analysis
+\end_layout
+
+\begin_layout Standard
+The Design Document is composed by two sections and an appendix.
+ Section 1 contains the description about the database model, Section 2
+ contains the UX diagrams, BCE diagrams for every user and the JSP models.
+ The appendix contains a synthetic description of the software used to develop
+ the Design Document.
+\end_layout
+
+\begin_layout Standard
+The DD is well organized but it does not say anything about the high-level
+ system architecture such as the number of 
+\begin_inset Quotes eld
+\end_inset
+
+logic layers
+\begin_inset Quotes erd
+\end_inset
+
+ nor explanations about the choices taken during the design phase.
+\end_layout
+
+\begin_layout Standard
+The Entity-Relationship model describes the attributes of every entity and
+ the meaning of the relationships.
+ The figure about the E/R model does not highlights the presence of 
+\begin_inset Quotes eld
+\end_inset
+
+weak entities
+\begin_inset Quotes erd
+\end_inset
+
+ of the model.
+ 
+\end_layout
+
+\begin_layout Standard
+The UX diagrams are clear and contain all the possible paths for the different
+ types of users.
+ Different colors are used for actions, viewed pages and detail frames.
+\end_layout
+
+\begin_layout Standard
+The BCE models offer a wide view upon the functionalities available to the
+ users and the three levels (Boundary, Control, Entity) are clearly visible
+ in the diagrams.
+\end_layout
+
+\begin_layout Standard
+Every object in the JSP models contains all the fields and operations belonging
+ to that object.
+\end_layout
+
+\begin_layout Standard
+It is remarkable that nowhere in the document is present a detailed explanation
+ of the classes used in the software architecture, this gives poor information
+ to readers who are interested in understanding the meaning and use of the
+ system objects.
+\end_layout
+
+\begin_layout Standard
+From the document, there is apparently no use of particular design patterns,
+ this choice should have been explained in the Design Document as it is
+ important for the system architecture.
+\end_layout
+
+\begin_layout Standard
+Is remarkable that there are no javadoc available for the project, nor any
+ guide in order to document the source code: this lack doesn't let to know
+ how the project was developed, and in this way is quite difficult to test
+ the application with a white-box approach.
+\end_layout
+
+\begin_layout Subsubsection
+Coherence with the software implementation 
+\end_layout
+
+\begin_layout Standard
+The logic representation of the E/R model of the database reflects the actual
+ implementation in the released software.
+\end_layout
+
+\begin_layout Standard
+Every object contained in the Design Document have been effectively implemented
+ in the released software.
+\end_layout
+
+\begin_layout Standard
+Especially the navigation diagrams (UX) correspond to the real series of
+ web pages which can be visited by the users.
+\end_layout
+
+\begin_layout Subsection
+User Guide
+\end_layout
+
+\begin_layout Subsubsection
+Overall Analysis
+\end_layout
+
+\begin_layout Standard
+The user guide is quite useful to let the end-user know how to use the software:
+ it is detailed with images and, except for the installation guide, it is
+ precise and detailed, clarifying what are the functionalities implemented
+ and how to perform them.
+\end_layout
+
+\begin_layout Standard
+For the install guide analysis, please check the installation testing
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Installation-Testing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It is remarkable that is not explained whether there is any kind of support
+ service to call if something goes wrong or if the end user needs help.
+\end_layout
+
+\begin_layout Subsubsection
+Coherence with the software implementation
+\end_layout
+
+\begin_layout Standard
+The user guide is coherent with the software implementation in every step,
+ except for the installation guide.
+\end_layout
+
+\begin_layout Standard
+For the install guide analysis, please check the installation testing
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Installation-Testing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Testing
+\end_layout
+
+\begin_layout Subsection
+Testing Environment
+\end_layout
+
+\begin_layout Standard
+The testing was executed on two different hardware platforms, in order to
+ cross validate the software and have more reliable results.
+\end_layout
+
+\begin_layout Subsubsection
+Platform
+\end_layout
+
+\begin_layout Itemize
+Host no.
+ 1
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+OS X Lion 64 bit 10.7.3
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Intel 2.2 GHz Intel Core i7
+\end_layout
+
+\begin_layout Itemize
+RAM 4 GB 1333 MHz DDR3
+\end_layout
+
+\begin_layout Itemize
+AMD Radeon HD 6750M 1024 MB
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Host no.
+ 2
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Ubuntu 11.10 32 bit
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Intel 900 MHz Celeron M 353 
+\end_layout
+
+\begin_layout Itemize
+RAM 1 GB 1333 MHz DDR2
+\end_layout
+
+\begin_layout Itemize
+Intel GMA 950 224 MB
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Tools Used
+\end_layout
+
+\begin_layout Itemize
+Host no.
+ 1
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firefox 10.0
+\end_layout
+
+\begin_layout Itemize
+Java JRE 6.0.29
+\end_layout
+
+\begin_layout Itemize
+JBoss-5.1.0.GA
+\end_layout
+
+\begin_layout Itemize
+MySQL Workbench 5.2.37
+\end_layout
+
+\begin_layout Itemize
+MySQL Community Server 5.5.20
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Host no.
+ 2
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Google Chrome 17.0.963.46
+\end_layout
+
+\begin_layout Itemize
+Java JRE 6.0.29
+\end_layout
+
+\begin_layout Itemize
+JBoss-5.1.0.GA
+\end_layout
+
+\begin_layout Itemize
+MySQL Workbench 5.2.37
+\end_layout
+
+\begin_layout Itemize
+MySQL Community Server 5.5.20
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Test Plan
+\end_layout
+
+\begin_layout Standard
+In order to test the software in an exhaustive way, the test will be divided
+ in two phases:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Installation Testing
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Use Cases Testing
+\end_layout
+
+\begin_layout Standard
+For the use cases tests results will be checked with database tools.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+
+\series bold
+Installation Testing Phase
+\end_layout
+
+\begin_layout Standard
+This phase will test the 
+\emph on
+Installation
+\emph default
+ 
+\emph on
+Guide
+\emph default
+ accuracy, as well as the consistency of the entire install procedure software.
+\end_layout
+
+\begin_layout Subsubsection
+
+\series bold
+Use Cases Testing Phase 
+\end_layout
+
+\begin_layout Standard
+This phase will test the use cases described in the given RASD document.
+ It will check if the declared use cases have been well tested by the developer
+ team before releasing the software.
+ It will be performed some stress test as well in order to check the system
+ robustness with even more complex input data.
+\end_layout
+
+\begin_layout Subsubsection
+Checking results
+\end_layout
+
+\begin_layout Standard
+In order to check the results of each test, the database will be queried
+ with MySQL Workbench, checking that what is written in the database is
+ coherent with what was expected to be recoded by each test.
+\end_layout
+
+\begin_layout Subsection
+Installation Testing
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Installation-Testing"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The installation phase was accomplished with some errors.
+ The user guide was not clear in all its points: a more verbose installation
+ guide should be given in order to let the user perform the software installatio
+n without errors due to interpreting some commands.
+\end_layout
+
+\begin_layout Standard
+In particular:
+\end_layout
+
+\begin_layout Itemize
+In the 
+\series bold
+Installation
+\series default
+ subsection of the 
+\series bold
+Installation Guide
+\series default
+ section
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There is no mention of what kind of JDK was used to build the project.
+ The project was tested with a JDK 6, and it failed to start due to the
+ fact that the .jar delivered with the project were builded with JDK 7 (see
+ error log in the appendix 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Server-Start-Fail"
+
+\end_inset
+
+).
+ After contacting the developer team and obtained a JDK 6 compiled version,
+ the testing could be started.
+\end_layout
+
+\begin_layout Itemize
+In step 3 the user doesn't know if he/she should use an external database
+ or if the software already has an internal database.
+ After contacting the developer team, it was decided to use an external
+ MySQL database server.
+\end_layout
+
+\begin_layout Itemize
+In step 4 is not specified what kind of email address parameters are requested,
+ and why they are requested.
+ Later in the document the point is not clearly explained.
+ Reading the RASD or the DD didn't help in order to understand what the
+ user was supposed to do.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+In the end, the project was installed and successfully executed without
+ further problems.
+\end_layout
+
+\begin_layout Subsection
+Functional Testing
+\end_layout
+
+\begin_layout Subsubsection
+Strategy
+\end_layout
+
+\begin_layout Standard
+The strategy and methodology followed during the testing phase are now listed.
+ 
+\end_layout
+
+\begin_layout Standard
+The testing activity is based on dynamic techniques to obtain information
+ of interest about the tested application by observing some executions using
+ a black box approach.
+ The objective of our testing activity is to verify that the functional
+ specifications are implemented correctly according to the RASD.
+ Each test performed will be reported and detailed in order to know if it
+ was successful or not, and in the latter case, what went wrong and how
+ crucial it was for the end-user.
+ The testers team wanted also to test the project adopting a white-box approach,
+ but the lack of a source code documentation nor the presence of javadocs
+ discouraged this intention.
+\end_layout
+
+\begin_layout Paragraph
+Black box testing
+\end_layout
+
+\begin_layout Standard
+For all the testing phase was used black-box testing: is a method of software
+ testing that tests the functionality of an application without specific
+ knowledge of the application's code/internal structure.
+ The tester is only aware of what the software is supposed to do, but not
+ how.
+ Test cases are built around specifications and requirements of the project.
+\end_layout
+
+\begin_layout Paragraph
+Test reporting
+\end_layout
+
+\begin_layout Standard
+For reporting each test description and its results, will be used the following
+ table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Document the scope of this test
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Describe how testing will be completed
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List the entrance criteria that should be met before this test commences
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List the exit criteria that should be met before this test is considered
+ complete
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Describe what are the test result.
+ Extended description of what happened.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Is a score (follow the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "test-defect-severity-table"
+
+\end_inset
+
+ table to know what score insert here) followed by a synthetic description
+ of what went wrong.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Describe the stressed components if noticeable
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Definition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+1 - Critical
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Defects that prevent further progress until resolved.
+ In testing, the entire application component or function will not work.
+ There is no work-around available, and testing cannot continue.
+ This kind of defects will definitely impact testing schedule and project
+ end-dates if not fixed immediately.
+ Affected component cannot go into production without this defect resolved
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+2 - Serious
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Defects that occur in a major function and are glossily wrong.
+ In testing, the entire application component or function will not work.
+ There is a bypass available, and some testing can continue.
+ In acceptance testing, defects that invalidate high or medium priority
+ test cases but the end-date impact is manageable.
+ Component can go into production, but requires manual user workaround.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+3 - Moderate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Defects that occur in a function but progress can continue.
+ In testing, the function tested will not perform as expected but testing
+ can continue.
+ Defects invalidate low priority test cases but the end-date impact is manageabl
+e.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+4 - Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Defects are cosmetic, such as errors in format or spelling.
+ A defect in the work product under inspection which, if not fixed, would
+ NOT cause a malfunction, would NOT prevent the attainment of a required
+ result, and would NOT result in a problem report.
+ Defects that do not invalidate test cases and do not affect end-date.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+5 - Very Low to None
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Defects that are very hard to notice, and that doesn't affect at all the
+ end-date nor invalidate test cases.
+ This kind of severity also includes nice-to-have features and future enhancemen
+ts.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Test defect severity table
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "test-defect-severity-table"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Use Cases Testing
+\end_layout
+
+\begin_layout Paragraph
+Student
+\end_layout
+
+\begin_layout Enumerate
+Registration
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the registration of a new Student into the MPH system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The registration fields are filled with different kind of content
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student accesses MPH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH checks the username chosen by the Student and confirms the registration
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The system executes correctly all the checks on the registration fields,
+ if the fields are correct it confirms the registration to the Student,
+ otherwise a description of the error is shown.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Registration Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Login
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the login of a Student into the MPH system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiple tries with various combination of username and password
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student accesses MPH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH checks the user authentication and show him/her the Student interface
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH rejects invalid combination of username and password and show messages
+ with the outcome of the operation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Login Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Create new team
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the creation of a new team by the Student
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tried to create a new team at the end of the registration process and from
+ the Student interface
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to create a team from the Student interface
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH checks the availability of the chosen team name
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH correctly checks the chosen username and, if available, confirms the
+ group creation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Team Creation Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Join a team
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for a Student to join a team
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tried to join teams which would not accept new students, full teams and
+ teams for the same project of the belonging team
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to join a team from the Student interface 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notifies the Student about the successful operation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student correctly joins the chosen team
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Join Team Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Edit profile
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for a Student to edit his/her profile
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The profile editable fields are filled with different kind of content
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to edit his/her personal data from the Student
+ interface.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH checks that the inserted data are correct and notifies the Student about
+ the successful operation 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+When the edit is complete the Student Home page is shown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\color black
+Low
+\end_layout
+
+\begin_layout Plain Layout
+MPH shows an error message even if the password change is successful and
+ the screen remains in the Profile Edit.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Profile Edit Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Upload a release
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the Student functionality to upload a release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tried to upload big files, long comments and multiple files for the same
+ release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to enter his/her enrolled project, from which
+ he/she will be able to upload a new release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notifies the Student about the successful upload
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH accepts the uploaded file with a message if the operation is successful
+ but it does not say anything if the uploaded release is saved without a
+ file
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\color magenta
+Serious
+\end_layout
+
+\begin_layout Plain Layout
+File with long comments are not stored into the Database but it seems that
+ the system registers the upload making impossible for the Student to upload
+ another file for the same release and for the Professor to evaluate and
+ download the release.
+\end_layout
+
+\begin_layout Plain Layout
+Choosing to upload more than one file for the same release actually stores
+ into the system only the last uploaded file, this is not documented anywhere.
+\end_layout
+
+\begin_layout Plain Layout
+It is not possible to upload files for a release after uploading them for
+ the first time, this should have been written clearly in the RASD but it
+ is not present.
+\end_layout
+
+\begin_layout Plain Layout
+For further information, check the Server Log 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Upload-a-Release"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UploadReleaseBean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Upload Release Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Review a release
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for the Student to view details about a release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viewing release from the project view
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to access the desired project, from the Student
+ interface 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH shows the Student details about the selected release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH shows the Student details about the selected release successfully
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View Release Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+View a release mark
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the view of the mark assigned by the Professor to the uploaded
+ release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viewing release mark from the project view
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to access the desired project, from the Student
+ interface 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH shows the Student the desired mark
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The desired mark is shown correctly next to the corresponding release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Release Mark Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+View a shared release
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for the Student to view releases belonging to
+ other teams
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Testing from the 
+\begin_inset Quotes eld
+\end_inset
+
+View shared release
+\begin_inset Quotes erd
+\end_inset
+
+ page
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to view shared releases, from the Student interface
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH shows the Student the selected release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Every shared release is shown correctly
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View Shared Release Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Download a release
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for the Student to download a release belonging
+ to another group
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Testing from the 
+\begin_inset Quotes eld
+\end_inset
+
+View shared release
+\begin_inset Quotes erd
+\end_inset
+
+ page
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Student executes the command to view shared releases, from the Student interface
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notifies the Student that the download has been successful 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The desired release is downloaded correctly but MPH does not notify the
+ Student about the successful operation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Download Shared Release Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Professor
+\end_layout
+
+\begin_layout Enumerate
+Login
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the login of a Professor into the MPH system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to login to the MPH system opening the website and
+ inserting his/her username and password, then clicking "Login" button.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH verify professor's credentials and let the professor enter the system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test passed
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor Login Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Edit profile
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Edit personal information
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to edit the personal information after logging into
+ the MPH system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH verify professor's credentials and let the professor enter the system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+When the edit is complete the Professor Home page is shown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\color red
+Low
+\end_layout
+
+\begin_layout Plain Layout
+If the professor wants to change password, after inserting the data he/she
+ will get an error: "Per cambiare la password di accesso compilare correttamente
+ i 3 campi relativi!!".
+ Anyway the password is successfully changed in the database.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor edits personal information Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Publish a project
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the Professor functionality to publish a project
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to edit the personal information after logging into
+ the MPH system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notify the professor that the project was successfully created
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+With attribute length too long, the request cannot be accomplished and the
+ software crashes: the error log is available in the appendix 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Create-Project-Fail"
+
+\end_inset
+
+.
+ In the creation course summary, if the description is long enough (over
+ 60 characters) is not well formatted.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\color red
+Moderate
+\end_layout
+
+\begin_layout Plain Layout
+With attribute length too long, the request cannot be accomplished and the
+ software crashes: the error log is available in the appendix 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Create-Project-Fail"
+
+\end_inset
+
+.
+ In the creation course summary, if the description is long enough (over
+ 60 characters) is not well formatted.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+servlet.CreaProgetto
+\emph default
+ as seen by the error log.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor publishes a project Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Get releases by type
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for the Professor to view details about a set
+ of releases by type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to get the releases by type after viewing a particular
+ project page by clicking the option "In base al tipo di release".
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH, access his/her profile, open the page "Visualizza
+ Progetto", select a particular project then click on "Visualizza Release".
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH let the professor view each release grouped by type.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH let the professor view each release grouped by type successfully.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor get releases by type Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Get releases by team
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for the Professor to view details about a set
+ of releases by team
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to get the releases by group after viewing a particular
+ project page by clicking the option "In base al gruppo che segue il progetto".
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH, access his/her profile, open the page "Visualizza
+ Progetto", select a particular project then click on "Visualizza Release".
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH let the professor view each release grouped by team.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH let the professor view each release grouped by team successfully.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor get releases by group Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Mark a release
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This tests the possibility for the Professor to evaluate and mark a release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to set a mark and confirm that mark after have pressed
+ "Fine Consegna" button for that release.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH, access his/her profile, open the page "Visualizza
+ Progetto", select a particular project, click on "Visualizza Release",
+ then select the the option "In base al tipo di release".
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notify the professor that the mark registration ended successfully.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+If the mark was performed successfully, MPH notify the user.
+ Otherwise, nothing happens.
+ In any case, no mail has been sent to the group team members as specified
+ in the user manual.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\color magenta
+Serious
+\end_layout
+
+\begin_layout Plain Layout
+If the professor tries to mark the releases immediately after click the
+ "Fine Consegna", the software freezes.
+ If the professor go back to the previous menu and then return to view releases,
+ then if he/she tries to mark the releases finally the operation ends successful
+ly.
+ It is remarkable that in the RASD is not stated that in order to mark a
+ release he/she must close the release delivery by type, so is a serious
+ issue to deal with before releasing the software.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor mark a releases Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Download a release
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Download a release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to download a particular release by clicking on the
+ blue and green icon next to the requested release name.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH, access his/her profile, open the page "Visualizza
+ Progetto", select a particular project, click on "Visualizza Release",
+ then select one visualization option.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notify the professor that the download ended successfully.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test passed even with very large files to download.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor download a releases Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Share a release
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Share a release
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A professor will try to share a particular release by clicking on the button
+ "Condividi" next to the requested release name.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH, access his/her profile, open the page "Visualizza
+ Progetto", select a particular project, click on "Visualizza Release",
+ then select one visualization option.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notify the professor that a release was shared successfully.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notify the professor that a release was shared successfully.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Professor share a release Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Administrator
+\end_layout
+
+\begin_layout Enumerate
+Register a new professor
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Register a new professor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The administrator will try to create a new professor by entering his/her
+ profile and filling the create new professor form.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The professor must run MPH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH verify professor's credentials and let the professor to be registered
+ into the system
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+If the credentials are correct, the professor is registered into the system
+ but the notification email is not sent to the professor.
+ The email checking contains some defects explained below (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://en.wikipedia.org/wiki/Email_address "
+
+\end_inset
+
+taken as paradigm).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\color red
+Moderate
+\end_layout
+
+\begin_layout Plain Layout
+If a valid email is given in the setting.txt file, the creation of a new
+ professor freeze the system for over 5 minutes.
+ It is still possible to enter a not valid email with spaces and other invalid
+ symbols.
+ If a string is too long (bigger than 1000 characters) the software crashes.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Administrator registers a new professor Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+View Professor Profile
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+View Professor Profile
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The administrator will try to view a professor profile by entering his/her
+ profile and filling the create new professor form.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The administrator must enter MPH system and his/her profile.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH let the administrator view the requested profile.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The Administrator can view the requested profile successfully.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Administrator views professor profile Case Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Delete professor
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Scope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Delete professor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Execution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The administrator will try to delete a professor by entering his/her profile,
+ entering "Visualizza profili", selecting a professor and then click on
+ the "Elimina" button.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Entrance Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The administrator must enter MPH system and his/her profile.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Exit Criteria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MPH notify the administrator that the deletion was successful.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Test Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Professor cannot be deleted because the functionality is not implemented
+ yet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Defect Severity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\color magenta
+Serious
+\end_layout
+
+\begin_layout Plain Layout
+Professor cannot be deleted because the functionality is not implemented
+ yet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Stressed Components
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not noticeable any component stressed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Administrator deletes a professor Test report table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Final Considerations
+\end_layout
+
+\begin_layout Standard
+The software has reached a good maturation point, however it is not ready
+ to be accepted by the end-user yet due to some manageable defections that
+ the developers could fix before the release date.
+ There weren't implemented controls that manage situations where data inserted
+ is too big to be stored in the database, and some functionalities are still
+ missing (but easy to implement before the final deadline) or malfunctioning.
+ The developer team is also encouraged to produce a source documentation,
+ like Javadocs, in order to better understand what the program does and
+ how it does it without reverse engineering the entire project.
+\end_layout
+
+\begin_layout Section
+Appendix
+\end_layout
+
+\begin_layout Subsection
+Logs 
+\end_layout
+
+\begin_layout Subsubsection
+Server Start Fail
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Server-Start-Fail"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Server Log:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\tiny\ttfamily},breaklines=true,numbers=left"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+Chrono:bin RAA$ ./run.sh 
+\end_layout
+
+\begin_layout Plain Layout
+
+=========================================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  JBoss Bootstrap Environment
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  JBOSS_HOME: /Volumes/SharedHD/RAA/SoftwareDevelopment/Workspace/ApplicationSer
+ver/jboss-5.1.0.GA
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  JAVA: java
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  JAVA_OPTS: -Dprogram.name=run.sh -Xms128m -Xmx512m -XX:MaxPermSize=256m
+ -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.s
+erver.gcInterval=3600000
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  CLASSPATH: /Volumes/SharedHD/RAA/SoftwareDevelopment/Workspace/ApplicationServ
+er/jboss-5.1.0.GA/bin/run.jar
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+=========================================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,588 INFO  [ServerImpl] Starting JBoss (Microcontainer)...
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,610 INFO  [ServerImpl] Release ID: JBoss [The Oracle] 5.1.0.GA (build:
+ SVNTag=JBoss_5_1_0_GA date=200905221634)
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,610 INFO  [ServerImpl] Bootstrap URL: null
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,610 INFO  [ServerImpl] Home Dir: /Volumes/SharedHD/RAA/SoftwareDevelopm
+ent/Workspace/ApplicationServer/jboss-5.1.0.GA
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,610 INFO  [ServerImpl] Home URL: file:/Volumes/SharedHD/RAA/SoftwareDev
+elopment/Workspace/ApplicationServer/jboss-5.1.0.GA/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,611 INFO  [ServerImpl] Library URL: file:/Volumes/SharedHD/RAA/Software
+Development/Workspace/ApplicationServer/jboss-5.1.0.GA/lib/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,612 INFO  [ServerImpl] Patch URL: null
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,612 INFO  [ServerImpl] Common Base URL: file:/Volumes/SharedHD/RAA/Soft
+wareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/common/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,612 INFO  [ServerImpl] Common Library URL: file:/Volumes/SharedHD/RAA/S
+oftwareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/common/lib/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,612 INFO  [ServerImpl] Server Name: default
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,613 INFO  [ServerImpl] Server Base Dir: /Volumes/SharedHD/RAA/SoftwareD
+evelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,613 INFO  [ServerImpl] Server Base URL: file:/Volumes/SharedHD/RAA/Soft
+wareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,613 INFO  [ServerImpl] Server Config URL: file:/Volumes/SharedHD/RAA/So
+ftwareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/conf/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,613 INFO  [ServerImpl] Server Home Dir: /Volumes/SharedHD/RAA/SoftwareD
+evelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,613 INFO  [ServerImpl] Server Home URL: file:/Volumes/SharedHD/RAA/Soft
+wareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,614 INFO  [ServerImpl] Server Data Dir: /Volumes/SharedHD/RAA/SoftwareD
+evelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/data
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,614 INFO  [ServerImpl] Server Library URL: file:/Volumes/SharedHD/RAA/S
+oftwareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/lib/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,614 INFO  [ServerImpl] Server Log Dir: /Volumes/SharedHD/RAA/SoftwareDe
+velopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/log
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,614 INFO  [ServerImpl] Server Native Dir: /Volumes/SharedHD/RAA/Softwar
+eDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/tmp/native
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,614 INFO  [ServerImpl] Server Temp Dir: /Volumes/SharedHD/RAA/SoftwareD
+evelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/tmp
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:21,615 INFO  [ServerImpl] Server Temp Deploy Dir: /Volumes/SharedHD/RAA/So
+ftwareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/tmp/dep
+loy
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:22,621 INFO  [ServerImpl] Starting Microcontainer, bootstrapURL=file:/Volu
+mes/SharedHD/RAA/SoftwareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/ser
+ver/default/conf/bootstrap.xml
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:23,370 INFO  [VFSCacheFactory] Initializing VFSCache [org.jboss.virtual.plugi
+ns.cache.CombinedVFSCache]
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:23,371 INFO  [VFSCacheFactory] Using VFSCache [CombinedVFSCache[real-cache
+: null]]
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:23,572 INFO  [CopyMechanism] VFS temp dir: /Volumes/SharedHD/RAA/SoftwareD
+evelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/server/default/tmp
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:23,572 INFO  [ZipEntryContext] VFS force nested jars copy-mode is
+ enabled.
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:24,567 INFO  [ServerInfo] Java version: 1.6.0_29,Apple Inc.
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:24,567 INFO  [ServerInfo] Java Runtime: Java(TM) SE Runtime Environment
+ (build 1.6.0_29-b11-402-11D50)
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:24,567 INFO  [ServerInfo] Java VM: Java HotSpot(TM) 64-Bit Server
+ VM 20.4-b02-402,Apple Inc.
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:24,567 INFO  [ServerInfo] OS-System: Mac OS X 10.7.3,x86_64
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:24,590 INFO  [ServerInfo] VM arguments: -Dprogram.name=run.sh -Xms128m
+ -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.g
+cInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djava.endorsed.dirs=/Volume
+s/SharedHD/RAA/SoftwareDevelopment/Workspace/ApplicationServer/jboss-5.1.0.GA/lib/e
+ndorsed 
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:24,627 INFO  [JMXKernel] Legacy JMX core initialized
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:25,829 INFO  [ProfileServiceBootstrap] Loading profile: ProfileKey@531ae81
+d[domain=default, server=default, name=default]
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:27,129 INFO  [WebService] Using RMI server codebase: http://127.0.0.1:8083/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:30,520 INFO  [NativeServerConfig] JBoss Web Services - Stack Native
+ Core
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:30,521 INFO  [NativeServerConfig] 3.1.2.GA
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:30,846 INFO  [AttributeCallbackItem] Owner callback not implemented.
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:31,533 INFO  [LogNotificationListener] Adding notification listener
+ for logging mbean "jboss.system:service=Logging,type=Log4jService" to server
+ org.jboss.mx.server.MBeanServerImpl@3219ee8a[ defaultDomain='jboss' ]
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:33,757 WARN  [SaxJBossXBParser] SchemaLocation: schemaLocation value
+ = 'http://java.sun.com/xml/ns/persistence' must have even number of URI's.
+ @ vfszip:/Volumes/SharedHD/RAA/SoftwareDevelopment/Workspace/ApplicationServer/
+jboss-5.1.0.GA/server/default/deploy/MPHMODULE.jar/META-INF/persistence.xml[4,90]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+[omissis]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:45,000 WARN  [ClassLoaderManager] Unexpected error during load of:servlet.A
+ggiungiProgetto
+\end_layout
+
+\begin_layout Plain Layout
+
+java.lang.UnsupportedClassVersionError: servlet/AggiungiProgetto : Unsupported
+ major.minor version 51.0
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.ClassLoader.defineClass1(Native Method)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader.access$200(BaseClassLoader.java:63)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader$2.run(BaseClassLoader.java:572)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader$2.run(BaseClassLoader.java:532)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.security.AccessController.doPrivileged(Native Method)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader.loadClassLocally(BaseClassLoader.jav
+a:530)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader.loadClassLocally(BaseClassLoader.jav
+a:507)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseDelegateLoader.loadClass(BaseDelegateLoader.java
+:134)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.filter.FilteredDelegateLoader.loadClass(FilteredDelegate
+Loader.java:131)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.ClassLoadingTask$ThreadTask.run(ClassLoadingTask.jav
+a:452)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.ClassLoaderManager.nextTask(ClassLoaderManager.java:
+251)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.ClassLoaderManager.process(ClassLoaderManager.java:1
+50)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoaderDomain.loadClass(BaseClassLoaderDoma
+in.java:265)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoaderDomain.loadClass(BaseClassLoaderDoma
+in.java:1119)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader.loadClassFromDomain(BaseClassLoader.
+java:798)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader.loadClass(BaseClassLoader.java:441)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:295)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.startup.WebAnnotationSet.loadClassAnnotation(WebAnnotationSet.
+java:145)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(We
+bAnnotationSet.java:119)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnota
+tionSet.java:58)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextCon
+fig.java:297)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.startup.ContextConfig.start(ContextConfig.java:1067)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:261)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java
+:117)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4312)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.service.deployers.TomcatDeployment.performDeployInternal(Tomca
+tDeployment.java:310)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.service.deployers.TomcatDeployment.performDeploy(TomcatDeploym
+ent.java:142)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.deployers.AbstractWarDeployment.start(AbstractWarDeployment.java:461
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.deployers.WebModule.startModule(WebModule.java:118)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.deployers.WebModule.start(WebModule.java:97)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.jav
+a:25)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.reflect.Method.invoke(Method.java:597)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:157)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:96)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:88)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:264)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:668)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.microcontainer.ServiceProxy.invoke(ServiceProxy.java:206)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at $Proxy38.start(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.microcontainer.StartStopLifecycleAction.installAction(StartStopL
+ifecycleAction.java:42)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.microcontainer.StartStopLifecycleAction.installAction(StartStopL
+ifecycleAction.java:37)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.action.SimpleControllerContextAction.simpleInstallAct
+ion(SimpleControllerContextAction.java:62)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.action.AccessControllerContextAction.install(AccessCo
+ntrollerContextAction.java:71)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractControllerContextActions.install(AbstractCon
+trollerContextActions.java:51)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractControllerContext.install(AbstractController
+Context.java:348)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.microcontainer.ServiceControllerContext.install(ServiceControlle
+rContext.java:286)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.install(AbstractController.java:16
+31)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.incrementState(AbstractController.
+java:934)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractControlle
+r.java:1082)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractControlle
+r.java:984)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:822
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:553
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.ServiceController.doChange(ServiceController.java:688)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.ServiceController.start(ServiceController.java:460)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.deployers.ServiceDeployer.start(ServiceDeployer.java:163)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.deployers.ServiceDeployer.deploy(ServiceDeployer.java:99)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.deployers.ServiceDeployer.deploy(ServiceDeployer.java:46)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.spi.deployer.helpers.AbstractSimpleRealDeployer.internalDeploy(
+AbstractSimpleRealDeployer.java:62)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.spi.deployer.helpers.AbstractRealDeployer.deploy(AbstractRealDe
+ployer.java:50)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.plugins.deployers.DeployerWrapper.deploy(DeployerWrapper.java:1
+71)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.doDeploy(DeployersImpl.java:143
+9)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.doInstallParentFirst(Deployers
+Impl.java:1157)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.doInstallParentFirst(Deployers
+Impl.java:1178)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.install(DeployersImpl.java:1098
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractControllerContext.install(AbstractController
+Context.java:348)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.install(AbstractController.java:16
+31)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.incrementState(AbstractController.
+java:934)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractControlle
+r.java:1082)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractControlle
+r.java:984)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:822
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:553
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.process(DeployersImpl.java:781)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.deployers.plugins.main.MainDeployerImpl.process(MainDeployerImpl.java:702
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.server.profileservice.repository.MainDeployerAdapter.process(MainD
+eployerAdapter.java:117)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.server.profileservice.repository.ProfileDeployAction.install(Profi
+leDeployAction.java:70)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.server.profileservice.repository.AbstractProfileAction.install(Abs
+tractProfileAction.java:53)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.server.profileservice.repository.AbstractProfileService.install(Ab
+stractProfileService.java:361)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractControllerContext.install(AbstractController
+Context.java:348)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.install(AbstractController.java:16
+31)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.incrementState(AbstractController.
+java:934)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractControlle
+r.java:1082)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractControlle
+r.java:984)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:822
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:553
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.server.profileservice.repository.AbstractProfileService.activatePr
+ofile(AbstractProfileService.java:306)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.system.server.profileservice.ProfileServiceBootstrap.start(ProfileServic
+eBootstrap.java:271)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.bootstrap.AbstractServerImpl.start(AbstractServerImpl.java:461)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.Main.boot(Main.java:221)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.Main$1.run(Main.java:556)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.Thread.run(Thread.java:680)
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:45,024 INFO  [TomcatDeployment] deploy, ctxPath=/
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:45,066 INFO  [TomcatDeployment] deploy, ctxPath=/jmx-console
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:45,118 ERROR [ProfileServiceBootstrap] Failed to load profile: Summary
+ of incomplete deployments (SEE PREVIOUS ERRORS FOR DETAILS):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DEPLOYMENTS IN ERROR:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Deployment "vfszip:/Volumes/SharedHD/RAA/SoftwareDevelopment/Workspace/Applica
+tionServer/jboss-5.1.0.GA/server/default/deploy/MPHMODULE.jar/" is in error
+ due to the following reason(s): java.lang.UnsupportedClassVersionError: sessionBe
+an/ManagerAmministratore : Unsupported major.minor version 51.0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:45,125 INFO  [Http11Protocol] Starting Coyote HTTP/1.1 on http-127.0.0.1-8080
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:45,140 INFO  [AjpProtocol] Starting Coyote AJP/1.3 on ajp-127.0.0.1-8009
+\end_layout
+
+\begin_layout Plain Layout
+
+16:49:45,148 INFO  [ServerImpl] JBoss (Microcontainer) [5.1.0.GA (build: SVNTag=JBo
+ss_5_1_0_GA date=200905221634)] Started in 23s:527ms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Create Project Fail
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Create-Project-Fail"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Server Log:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\tiny\ttfamily},breaklines=true,numbers=left"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+type Exception report
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+message
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+description The server encountered an internal error () that prevented it
+ from fulfilling this request.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+exception
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+javax.ejb.EJBTransactionRolledbackException: Transaction rolled back
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.tx.Ejb3TxPolicy.handleEndTransactionException(Ejb3TxPolicy.java:54)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPolicy.endTransaction(TxPolicy.java:175)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPolicy.invokeInOurTx(TxPolicy.java:87)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxInterceptor$Required.invoke(TxInterceptor.java:190)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPropagationInterceptor.invoke(TxPropagationInterceptor.java:76
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.tx.NullInterceptor.invoke(NullInterceptor.java:42)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.security.Ejb3AuthenticationInterceptorv2.invoke(Ejb3AuthenticationInt
+erceptorv2.java:186)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.ENCPropagationInterceptor.invoke(ENCPropagationInterceptor.java:41)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.BlockContainerShutdownInterceptor.invoke(BlockContainerShutdownInter
+ceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.currentinvocation.CurrentInvocationInterceptor.invoke(CurrentInvoc
+ationInterceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.stateful.StatefulContainer.dynamicInvoke(StatefulContainer.java:571)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.remoting.IsLocalInterceptor.invokeLocal(IsLocalInterceptor.java:85)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.remoting.IsLocalInterceptor.invoke(IsLocalInterceptor.java:72)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.remoting.PojiProxy.invoke(PojiProxy.java:62)
+\end_layout
+
+\begin_layout Plain Layout
+
+	$Proxy301.invoke(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(Sess
+ionProxyInvocationHandlerBase.java:207)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(Sess
+ionProxyInvocationHandlerBase.java:164)
+\end_layout
+
+\begin_layout Plain Layout
+
+	$Proxy305.finalizzaProgetto(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	servlet.CreaProgetto.doGet(CreaProgetto.java:33)
+\end_layout
+
+\begin_layout Plain Layout
+
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+\end_layout
+
+\begin_layout Plain Layout
+
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+root cause
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+javax.transaction.RollbackException: [com.arjuna.ats.internal.jta.transaction.arjunacore.
+commitwhenaborted] [com.arjuna.ats.internal.jta.transaction.arjunacore.commitwhenaborte
+d] Could not commit transaction.
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassocia
+te(TransactionImple.java:1435)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransacti
+on.java:137)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.jbossatx.BaseTransactionManagerDelegate.commit(BaseTransactionManager
+Delegate.java:75)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPolicy.endTransaction(TxPolicy.java:170)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPolicy.invokeInOurTx(TxPolicy.java:87)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxInterceptor$Required.invoke(TxInterceptor.java:190)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPropagationInterceptor.invoke(TxPropagationInterceptor.java:76
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.tx.NullInterceptor.invoke(NullInterceptor.java:42)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.security.Ejb3AuthenticationInterceptorv2.invoke(Ejb3AuthenticationInt
+erceptorv2.java:186)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.ENCPropagationInterceptor.invoke(ENCPropagationInterceptor.java:41)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.BlockContainerShutdownInterceptor.invoke(BlockContainerShutdownInter
+ceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.currentinvocation.CurrentInvocationInterceptor.invoke(CurrentInvoc
+ationInterceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.stateful.StatefulContainer.dynamicInvoke(StatefulContainer.java:571)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.remoting.IsLocalInterceptor.invokeLocal(IsLocalInterceptor.java:85)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.remoting.IsLocalInterceptor.invoke(IsLocalInterceptor.java:72)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.remoting.PojiProxy.invoke(PojiProxy.java:62)
+\end_layout
+
+\begin_layout Plain Layout
+
+	$Proxy301.invoke(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(Sess
+ionProxyInvocationHandlerBase.java:207)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(Sess
+ionProxyInvocationHandlerBase.java:164)
+\end_layout
+
+\begin_layout Plain Layout
+
+	$Proxy305.finalizzaProgetto(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	servlet.CreaProgetto.doGet(CreaProgetto.java:33)
+\end_layout
+
+\begin_layout Plain Layout
+
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+\end_layout
+
+\begin_layout Plain Layout
+
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+root cause
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+java.lang.Throwable: setRollbackOnly called from:
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.setRollbackOnly(Tra
+nsactionImple.java:392)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.setRollbackOnly(Base
+Transaction.java:195)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.jbossatx.BaseTransactionManagerDelegate.setRollbackOnly(BaseTransacti
+onManagerDelegate.java:123)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.hibernate.ejb.AbstractEntityManagerImpl.markAsRollback(AbstractEntityManagerImp
+l.java:421)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.hibernate.ejb.AbstractEntityManagerImpl.throwPersistenceException(AbstractEntit
+yManagerImpl.java:576)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.hibernate.ejb.AbstractEntityManagerImpl.throwPersistenceException(AbstractEntit
+yManagerImpl.java:614)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.hibernate.ejb.AbstractEntityManagerImpl$1.beforeCompletion(AbstractEntityManage
+rImpl.java:513)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(
+SynchronizationImple.java:101)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordi
+nator.java:269)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:89)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:177)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassocia
+te(TransactionImple.java:1423)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransacti
+on.java:137)
+\end_layout
+
+\begin_layout Plain Layout
+
+	com.arjuna.ats.jbossatx.BaseTransactionManagerDelegate.commit(BaseTransactionManager
+Delegate.java:75)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPolicy.endTransaction(TxPolicy.java:170)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPolicy.invokeInOurTx(TxPolicy.java:87)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxInterceptor$Required.invoke(TxInterceptor.java:190)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.tx.TxPropagationInterceptor.invoke(TxPropagationInterceptor.java:76
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.tx.NullInterceptor.invoke(NullInterceptor.java:42)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.security.Ejb3AuthenticationInterceptorv2.invoke(Ejb3AuthenticationInt
+erceptorv2.java:186)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.ENCPropagationInterceptor.invoke(ENCPropagationInterceptor.java:41)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.BlockContainerShutdownInterceptor.invoke(BlockContainerShutdownInter
+ceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.currentinvocation.CurrentInvocationInterceptor.invoke(CurrentInvoc
+ationInterceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.stateful.StatefulContainer.dynamicInvoke(StatefulContainer.java:571)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.remoting.IsLocalInterceptor.invokeLocal(IsLocalInterceptor.java:85)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.remoting.IsLocalInterceptor.invoke(IsLocalInterceptor.java:72)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.aspects.remoting.PojiProxy.invoke(PojiProxy.java:62)
+\end_layout
+
+\begin_layout Plain Layout
+
+	$Proxy301.invoke(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(Sess
+ionProxyInvocationHandlerBase.java:207)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(Sess
+ionProxyInvocationHandlerBase.java:164)
+\end_layout
+
+\begin_layout Plain Layout
+
+	$Proxy305.finalizzaProgetto(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	servlet.CreaProgetto.doGet(CreaProgetto.java:33)
+\end_layout
+
+\begin_layout Plain Layout
+
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+\end_layout
+
+\begin_layout Plain Layout
+
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+\end_layout
+
+\begin_layout Plain Layout
+
+	org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+note The full stack trace of the root cause is available in the JBoss Web/2.1.3.GA
+ logs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Upload a Release Fail
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Upload-a-Release"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the webpage background, written in white, is possible to see:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\tiny\ttfamily},breaklines=true"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+Errore: javax.persistence.PersistenceException: org.hibernate.exception.DataException
+: could not insert: [entityBean.FileRelease]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Server Log:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\tiny\ttfamily},breaklines=true,numbers=left"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+11:20:18,721 WARN  [LocalManagedConnectionFactory] exception trying to create
+ exception sorter (disabling):
+\end_layout
+
+\begin_layout Plain Layout
+
+java.lang.ClassNotFoundException: org.jboss.resource.adapter.jdbc.vendor.MySQLExcep
+ tionSorter from BaseClassLoader@20ba62{VFSClassLoaderPolicy@acb798{name=vfszip:
+/home/ale/jboss/server/default/deploy/MPHMODULE.jar/ domain=ClassLoaderDomain@110
+b640{name=DefaultDomain parentPolicy=BEFORE parent=org.jboss.bootstrap.NoAnnotation
+URLClassLoader@1e97676} roots=[MemoryContextHandler@21594478[path= context=vfsme
+mory://3j001-9xuan9-gyjwz9r7-1-gyjx0kux-26 real=vfsmemory://3j001-9xuan9-gyjwz9r
+7-1-gyjx0kux-26], DelegatingHandler@13664069[path=MPHMODULE.jar context=file:/hom
+e/ale/jboss/server/default/deploy/ real=file:/home/ale/jboss/server/default/depl
+oy/MPHMODULE.jar]]  delegates=null exported=[entityBean, Test, exception,
+ sessionBean, META-INF, util] <IMPORT-ALL>NON_EMPTY}}
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.classloader.spi.base.BaseClassLoader.loadClass(BaseClassLoader.java:448)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:266)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.resource.adapter.jdbc.BaseWrapperManagedConnectionFactory.isExceptionFat
+al(BaseWrapperManagedConnectionFactory.java:534)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.resource.adapter.jdbc.BaseWrapperManagedConnection.connectionError(BaseW
+rapperManagedConnection.java:376)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.resource.adapter.jdbc.WrappedConnection.checkException(WrappedConnection.
+java:865)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.resource.adapter.jdbc.WrappedStatement.checkException(WrappedStatement.ja
+va:852)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.resource.adapter.jdbc.WrappedPreparedStatement.executeUpdate(WrappedPrep
+aredStatement.java:369)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.id.IdentityGenerator$GetGeneratedKeysDelegate.executeAndExtract(Id
+entityGenerator.java:94)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturning
+Delegate.java:57)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersi
+ster.java:2186)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersi
+ster.java:2666)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.action.EntityIdentityInsertAction.execute(EntityIdentityInsertActi
+on.java:71)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.ActionQueue.execute(ActionQueue.java:279)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.AbstractSaveEventListener.performSaveOrReplicate(Abstract
+SaveEventListener.java:321)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.AbstractSaveEventListener.performSave(AbstractSaveEventLi
+stener.java:204)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.AbstractSaveEventListener.saveWithGeneratedId(AbstractSav
+eEventListener.java:130)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.ejb.event.EJB3MergeEventListener.saveWithGeneratedId(EJB3MergeEvent
+Listener.java:43)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.DefaultMergeEventListener.entityIsTransient(DefaultMergeE
+ventListener.java:238)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.DefaultMergeEventListener.onMerge(DefaultMergeEventListen
+er.java:170)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.impl.SessionImpl.fireMerge(SessionImpl.java:714)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.impl.SessionImpl.merge(SessionImpl.java:696)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.CascadingAction$6.cascade(CascadingAction.java:268)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascadeToOne(Cascade.java:291)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascadeAssociation(Cascade.java:239)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascadeProperty(Cascade.java:192)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascadeCollectionElements(Cascade.java:319)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascadeCollection(Cascade.java:265)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascadeAssociation(Cascade.java:242)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascadeProperty(Cascade.java:192)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.engine.Cascade.cascade(Cascade.java:153)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.AbstractSaveEventListener.cascadeAfterSave(AbstractSaveEv
+entListener.java:479)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.DefaultMergeEventListener.entityIsTransient(DefaultMergeE
+ventListener.java:246)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.DefaultMergeEventListener.onMerge(DefaultMergeEventListen
+er.java:170)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.event.def.DefaultMergeEventListener.onMerge(DefaultMergeEventListen
+er.java:81)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.impl.SessionImpl.fireMerge(SessionImpl.java:704)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.impl.SessionImpl.merge(SessionImpl.java:688)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.impl.SessionImpl.merge(SessionImpl.java:692)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.hibernate.ejb.AbstractEntityManagerImpl.merge(AbstractEntityManagerImpl.java:
+235)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.jpa.tx.TransactionScopedEntityManager.merge(TransactionScopedEntityMana
+ger.java:193)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sessionBean.UploadReleaseBean.finalizza(UploadReleaseBean.java:115)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.jav
+a:43)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.reflect.Method.invoke(Method.java:616)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeTarget(MethodInvocation.java:122)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:111)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.EJBContainerInvocationWrapper.invokeNext(EJBContainerInvocationWr
+apper.java:69)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.interceptors.aop.InterceptorSequencer.invoke(InterceptorSequencer.ja
+va:73)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.interceptors.aop.InterceptorSequencer.aroundInvoke(InterceptorSeque
+ncer.java:59)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.GeneratedMethodAccessor285.invoke(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.jav
+a:43)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.reflect.Method.invoke(Method.java:616)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.advice.PerJoinpointAdvice.invoke(PerJoinpointAdvice.java:174)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.interceptors.aop.InvocationContextInterceptor.fillMethod(Invocation
+ContextInterceptor.java:72)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.advice.org.jboss.ejb3.interceptors.aop.InvocationContextInterceptor_z_f
+illMethod_20211730.invoke(InvocationContextInterceptor_z_fillMethod_20211730.java)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.interceptors.aop.InvocationContextInterceptor.setup(InvocationConte
+xtInterceptor.java:88)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.advice.org.jboss.ejb3.interceptors.aop.InvocationContextInterceptor_z_s
+etup_20211730.invoke(InvocationContextInterceptor_z_setup_20211730.java)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.connectionmanager.CachedConnectionInterceptor.invoke(CachedConnect
+ionInterceptor.java:62)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.entity.ExtendedPersistenceContextPropagationInterceptor.invoke(Ext
+endedPersistenceContextPropagationInterceptor.java:60)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.entity.TransactionScopedEntityManagerInterceptor.invoke(Transactio
+nScopedEntityManagerInterceptor.java:56)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.AllowedOperationsInterceptor.invoke(AllowedOperationsInterceptor.j
+ava:47)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.tx.NullInterceptor.invoke(NullInterceptor.java:42)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.stateful.StatefulInstanceInterceptor.invoke(StatefulInstanceInterc
+eptor.java:81)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aspects.tx.TxPolicy.invokeInOurTx(TxPolicy.java:79)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aspects.tx.TxInterceptor$Required.invoke(TxInterceptor.java:190)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aspects.tx.TxPropagationInterceptor.invoke(TxPropagationInterceptor.java
+:76)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.tx.NullInterceptor.invoke(NullInterceptor.java:42)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.security.Ejb3AuthenticationInterceptorv2.invoke(Ejb3Authentication
+Interceptorv2.java:186)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.ENCPropagationInterceptor.invoke(ENCPropagationInterceptor.java:41
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.BlockContainerShutdownInterceptor.invoke(BlockContainerShutdownIn
+terceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aspects.currentinvocation.CurrentInvocationInterceptor.invoke(CurrentIn
+vocationInterceptor.java:67)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.stateful.StatefulContainer.dynamicInvoke(StatefulContainer.java:571
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.remoting.IsLocalInterceptor.invokeLocal(IsLocalInterceptor.java:85)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.remoting.IsLocalInterceptor.invoke(IsLocalInterceptor.java:72)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aop.joinpoint.MethodInvocation.invokeNext(MethodInvocation.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.aspects.remoting.PojiProxy.invoke(PojiProxy.java:62)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at $Proxy301.invoke(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(S
+essionProxyInvocationHandlerBase.java:207)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.ejb3.proxy.impl.handler.session.SessionProxyInvocationHandlerBase.invoke(S
+essionProxyInvocationHandlerBase.java:164)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at $Proxy307.finalizza(Unknown Source)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at servlet.UploadRelease.doPost(UploadRelease.java:101)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilte
+rChain.java:290)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.ja
+va:206)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilte
+rChain.java:235)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.ja
+va:206)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:235
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.security.SecurityAssociationValve.invoke(SecurityAssociationV
+alve.java:190)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.security.JaccContextValve.invoke(JaccContextValve.java:92)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.security.SecurityContextEstablishmentValve.process(SecurityCo
+ntextEstablishmentValve.java:126)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.security.SecurityContextEstablishmentValve.invoke(SecurityCon
+textEstablishmentValve.java:70)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.jboss.web.tomcat.service.jca.CachedConnectionValve.invoke(CachedConnectionValve.
+java:158)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:330)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:829)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Pro
+tocol.java:598)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+\end_layout
+
+\begin_layout Plain Layout
+
+	at java.lang.Thread.run(Thread.java:679)
+\end_layout
+
+\begin_layout Plain Layout
+
+11:20:18,827 WARN  [JDBCExceptionReporter] SQL Error: 1406, SQLState: 22001
+\end_layout
+
+\begin_layout Plain Layout
+
+11:20:18,827 ERROR [JDBCExceptionReporter] Data truncation: Data too long
+ for column 'Descrizione' at row 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

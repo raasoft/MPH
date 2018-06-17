@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions
+END
+ArtifactViewerFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/ArtifactViewerFunctionalities.java
+END
+ArtifactEvaluatorFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/ArtifactEvaluatorFunctionalities.java
+END
+UserRegisteringFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/UserRegisteringFunctionalities.java
+END
+CourseViewerFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/CourseViewerFunctionalities.java
+END
+UserEditingFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/UserEditingFunctionalities.java
+END
+UserSessionInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/UserSessionInterface.java
+END
+TeamManagementFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/TeamManagementFunctionalities.java
+END
+ProjectViewerFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/145/MPH-Shared/src/mph/beans/sessions/ProjectViewerFunctionalities.java
+END
+TeamBasicFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/145/MPH-Shared/src/mph/beans/sessions/TeamBasicFunctionalities.java
+END
+UserViewerFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/UserViewerFunctionalities.java
+END
+DeliverableViewerFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/145/MPH-Shared/src/mph/beans/sessions/DeliverableViewerFunctionalities.java
+END
+ArtifactEditingFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/ArtifactEditingFunctionalities.java
+END
+AdministratorManagerRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/sessions/AdministratorManagerRemote.java
+END
+UserLoginFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/UserLoginFunctionalities.java
+END
+ProfessorManagerRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/145/MPH-Shared/src/mph/beans/sessions/ProfessorManagerRemote.java
+END
+TeamViewerFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/TeamViewerFunctionalities.java
+END
+ProjectEditingFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/145/MPH-Shared/src/mph/beans/sessions/ProjectEditingFunctionalities.java
+END
+TeamCreationFunctionalities.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/145/MPH-Shared/src/mph/beans/sessions/TeamCreationFunctionalities.java
+END
+BasicUserManagerInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/149/MPH-Shared/src/mph/beans/sessions/BasicUserManagerInterface.java
+END
+StudentManagerRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/145/MPH-Shared/src/mph/beans/sessions/StudentManagerRemote.java
+END

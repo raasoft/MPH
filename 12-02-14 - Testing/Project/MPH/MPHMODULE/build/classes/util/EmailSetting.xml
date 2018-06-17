@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TODO_LIST> 
+  <ITEM SMTP_HOST_NAME="smtp.gmail.com" SMTP_AUTH_USER="f.monti88@gmail.com" SMTP_AUTH_PWD="polimico88" PORT="25"> 
+    <DESCR>Parametri per settare l'email delle notificazioni</DESCR> 
+  </ITEM> 
+ </TODO_LIST>

@@ -1,0 +1,22 @@
+﻿<datasources> 
+  <local-tx-datasource> 
+ 
+    <jndi-name>mph</jndi-name> 
+ 
+    <connection-url>jdbc:mysql://localhost:3306/mph</connection-url> 
+    <driver-class>com.mysql.jdbc.Driver</driver-class> 
+
+    <!-- If you want to access the mysql dbms with your custom user
+     and password edit the user-name and password tag below change the attribute below to  -->
+    <user-name>root</user-name>
+    <password></password>
+    <!-- end of the editable part  -->
+      
+    <exception-sorter-class-name>
+	 	 	 org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter
+	 	 </exception-sorter-class-name>
+<metadata>
+	 	 	 <type-mapping>mySQL</type-mapping>
+	 	 </metadata>
+</local-tx-datasource>
+</datasources>

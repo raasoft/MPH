@@ -1,0 +1,6 @@
+Deadline 22 December 2011, 23.59: Design document (DD). 
+
+DD must contain a functional description of the system, and any other view you find useful to provide. You should use all the UML diagrams you need to provide a full description of the system. Alloy may also be useful.
+
+In Brief:
+-Do the last phase of the project design: UML diagrams, Alloy verification.

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<magicdraw><literalstring humanType="Literal String" icon="UX_files/icon_5212354.png" id="_16_8_2030113_1324403927406_549458_14127"><name humanName="Name"/><owner humanName="Owner" humanType="Slot" icon="UX_files/icon_558865.png" mode="expert" refid="_16_8_2030113_1324403927406_533847_14126"/><owningSlot humanName="Owning Slot" humanType="Slot" icon="UX_files/icon_558865.png" refid="_16_8_2030113_1324403927406_533847_14126"/><qualifiedName humanName="Qualified Name">Resources::Student::::::</qualifiedName><text humanName="Text" mode="standard">&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;a href="mdel://_16_8_2030113_1324121466375_38164_15716"&gt;Project1&lt;/a&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;
+
+</text><value humanName="Value" mode="standard,expert">&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;a href="mdel://_16_8_2030113_1324121466375_38164_15716"&gt;Project1&lt;/a&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;
+
+</value><visibility humanName="Visibility">public</visibility></literalstring></magicdraw>

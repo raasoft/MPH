@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence   xmlns="http://java.sun.com/xml/ns/persistence"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="mph">
+       <jta-data-source>java:/MPH-Project</jta-data-source>
+       <class>entityBean.Amministratore</class>
+       <class>entityBean.FileRelease</class>
+       <class>entityBean.Gruppo</class>
+       <class>entityBean.Professore</class>
+       <class>entityBean.Progetto</class>
+       <class>entityBean.ProgettoGruppo</class>
+       <class>entityBean.ProgettoRelease</class>
+       <class>entityBean.Releas</class>
+       <class>entityBean.Studente</class>
+       <properties>
+           <property name="hibernate.hbm2ddl.auto" value="update" />
+            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+     		<property name="hibernate.hbm2ddl.auto" value="update"/>
+      		<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+      		<property name="hibernate.connection.username" value="root"/>
+      		<property name="hibernate.connection.password" value="root"/>
+      		<property name="hibernate.connection.url" value="jdbc:hsqldb:data/tutorial"/> -->
+       </properties>
+    </persistence-unit>
+</persistence>

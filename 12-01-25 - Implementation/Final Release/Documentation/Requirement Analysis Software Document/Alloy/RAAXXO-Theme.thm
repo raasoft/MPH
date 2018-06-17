@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view nodetheme="Martha">
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="Professor"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+</node>
+
+<node color="Blue">
+   <type name="Score"/>
+   <type name="Student"/>
+</node>
+
+<node color="Yellow">
+   <type name="User"/>
+</node>
+
+<node shape="Circle" color="Green">
+   <type name="Team"/>
+</node>
+
+<node shape="Diamond" color="Red">
+   <type name="Deliverable"/>
+</node>
+
+<node shape="Hexagon" color="Gray">
+   <type name="Date"/>
+</node>
+
+<node shape="Hexagon" color="White">
+   <type name="ID"/>
+   <type name="Name"/>
+   <type name="PersonalData"/>
+</node>
+
+<node shape="House" color="Yellow">
+   <type name="Artifact"/>
+</node>
+
+<node shape="Parallelogram" color="Black">
+   <type name="Course"/>
+</node>
+
+<node shape="Trapezoid" color="Gray">
+   <type name="Project"/>
+</node>
+
+<edge color="Black">
+   <relation name="deadline"> <type name="Deliverable"/> <type name="Date"/> </relation>
+   <relation name="id"> <type name="User"/> <type name="ID"/> </relation>
+   <relation name="name"> <type name="Team"/> <type name="Name"/> </relation>
+</edge>
+
+<edge color="Blue" weight="10">
+   <relation name="students"> <type name="Team"/> <type name="Student"/> </relation>
+</edge>
+
+<edge color="Magic">
+   <relation name="artifacts"> <type name="Team"/> <type name="Artifact"/> </relation>
+</edge>
+
+<edge color="Red">
+   <relation name="deliverable"> <type name="Artifact"/> <type name="Deliverable"/> </relation>
+</edge>
+
+</view>
+
+</alloy>

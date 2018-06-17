@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/173/MPH-Server/ejbModule/com/raaxxo/mph/sessions/remote
+END
+StudentManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/163/MPH-Server/ejbModule/com/raaxxo/mph/sessions/remote/StudentManager.java
+END
+UserSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/160/MPH-Server/ejbModule/com/raaxxo/mph/sessions/remote/UserSession.java
+END
+AdministratorManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/sessions/remote/AdministratorManager.java
+END
+BasicUserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/173/MPH-Server/ejbModule/com/raaxxo/mph/sessions/remote/BasicUserManager.java
+END
+ProfessorManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/146/MPH-Server/ejbModule/com/raaxxo/mph/sessions/remote/ProfessorManager.java
+END

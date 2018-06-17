@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids
+END
+ArtifactIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/ArtifactIdDTO.java
+END
+DeliverableIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/DeliverableIdDTO.java
+END
+UserIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/UserIdDTO.java
+END
+CourseIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/CourseIdDTO.java
+END
+ProfessorIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/ProfessorIdDTO.java
+END
+IdentifierDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/IdentifierDTO.java
+END
+ProjectIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/ProjectIdDTO.java
+END
+StudentIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/StudentIdDTO.java
+END
+TeamIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/TeamIdDTO.java
+END
+JoinRequestIdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/raasoftware/Manage_Project_Homework/svn/!svn/ver/141/MPH-Shared/src/mph/beans/dto/ids/JoinRequestIdDTO.java
+END

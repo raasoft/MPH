@@ -1,0 +1,5776 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset External
+	template RasterImage
+	filename 200px-Logo_Politecnico_Milano.png
+	clip
+	width 30page%
+
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+Manage Project Homework: 
+\begin_inset Newline newline
+\end_inset
+
+Requirement Analysis and Specification Document
+\end_layout
+
+\begin_layout Author
+Riccardo Ancona - 782025 
+\begin_inset Newline newline
+\end_inset
+
+Alessandro Ditta - 781482
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Revision Summary
+\end_layout
+
+\begin_layout Enumerate
+Date: 23/01/2012
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Revision: 1
+\end_layout
+
+\begin_layout Description
+Changes:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Modified the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:RegNewProfDefNewProj"
+
+\end_inset
+
+scenario.
+\end_layout
+
+\begin_layout Standard
+Modified the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "par:Start/Stop-the-system"
+
+\end_inset
+
+ Use Case.
+\end_layout
+
+\begin_layout Standard
+Inserted the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Customer-specifications'-unclear"
+
+\end_inset
+
+ subsection of the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Specific-Requirements"
+
+\end_inset
+
+ section.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Purpose
+\end_layout
+
+\begin_layout Standard
+The purpose of this document is to describe the requirements specifications
+ for a application used by professors and students of university courses
+ with project deliverables, including the details of the project requirements,
+ interfaces, design issues and components.
+\end_layout
+
+\begin_layout Standard
+The intended audience of this document includes the prospective developers
+ of the tool, the students, the professors, the system administrators who
+ will use the framework and the people responsible for the course organization.
+\end_layout
+
+\begin_layout Subsection
+Scope
+\end_layout
+
+\begin_layout Standard
+The software system to be produced is a projects management tool which will
+ be referred to as Manage Project Homework (MPH) throughout this document.
+\end_layout
+
+\begin_layout Standard
+MPH will allow professors to publish a project description and to define
+ the set of the corresponding deliverables.
+ It will allow students to join project teams and submit deliverables by
+ uploading them into the system.
+\end_layout
+
+\begin_layout Standard
+The professor will also be able to evaluate the project deliverables assigning
+ a score to them and leaving to the system the computation of the final
+ score based on the average of the individual scores.
+ MPH will also provide some information sharing functionalities among different
+ teams.
+ 
+\end_layout
+
+\begin_layout Subsection
+Definitions, acronyms, and abbreviations
+\end_layout
+
+\begin_layout Description
+MPH: Manage Project Homework, the software system to be produced.
+\end_layout
+
+\begin_layout Description
+Team: a set of 1, 2 or 3 students who work together on the same project.
+\end_layout
+
+\begin_layout Description
+Admin: the system administrator
+\end_layout
+
+\begin_layout Description
+Deliverable: the model of a tangible object produced as a result of a specific
+ phase of the project.
+\end_layout
+
+\begin_layout Description
+Artifact: the effectively tangible object associated to a deliverable
+\end_layout
+
+\begin_layout Description
+Deadline: the date by which the artifact associated to a deliverable must
+ be delivered
+\end_layout
+
+\begin_layout Subsection
+References
+\end_layout
+
+\begin_layout Itemize
+Description of the project: 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://corsi.metid.polimi.it"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+IEEE Std.
+ 830-1998: IEEE Recommended Practice for Software Requirements Specifications:
+ 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=720574"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Carlo Ghezzi, Mehdi Jazayeri, Dino Mandrioli, Ingegneria del Software -
+ Fondamenti e Prinicipi, Pearson Education Italia, 2004
+\end_layout
+
+\begin_layout Subsection
+Overview
+\end_layout
+
+\begin_layout Standard
+The rest of this document contains a description of the MPH software system
+ (Section 2) and specific requirements for the system (Section 3).
+ Section 4 will present a model of the MPH software, Section 5 will show
+ the system specifications.
+\end_layout
+
+\begin_layout Section
+Overall Description 
+\end_layout
+
+\begin_layout Subsection
+Product perspective
+\end_layout
+
+\begin_layout Standard
+In some university courses students are required to develop a project.
+ A project is commonly structured in several phases, each phase involves
+ the release of an artifact before a certain deadline assigned to each phase.
+ To improve the management of the deliverables students and professors could
+ use a software tool that automates the process of submitting and evaluating
+ each artifact requested by the professor and provided by the students.
+ Without the support of the tool the time spent on each of the previous
+ activities can be a tedious task: MPH is meant to ease this work.
+\end_layout
+
+\begin_layout Subsubsection
+System Interfaces
+\end_layout
+
+\begin_layout Standard
+The MPH system to be developed consists in a Client-Server application integrate
+d with a database accessible by the Internet.
+ It consists in three major components:
+\end_layout
+
+\begin_layout Itemize
+the Database that contains the users' profiles' information (first name,
+ last name, ID, etc.) and the project details (deadlines, scores, submitted
+ deliverables, etc.)
+\end_layout
+
+\begin_layout Itemize
+the Client Module which allows the users to use the system (register and
+ log into the platform, creating/joining a new project, submitting/viewing
+ deliverables, etc.)
+\end_layout
+
+\begin_layout Itemize
+the Server Module is a daemon (a software running in background mode) which
+ accepts connections from Client Modules and serves as an interface between
+ the Module and the Database
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename client-server.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+System Architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+User Interfaces
+\end_layout
+
+\begin_layout Standard
+The Client module must provide a user interface that is available through
+ a Java application runnable on the main operating systems (Windows, Linux,
+ Mac OSX).
+ The Server Module has a minimal user interface that will allow the system
+ administrator to manage users, permissions and to perform ordinary maintenance.
+ The Database Module does not have a user interface.
+\end_layout
+
+\begin_layout Subsubsection
+Hardware Interfaces
+\end_layout
+
+\begin_layout Standard
+All components must be executable on a personal computer.
+\end_layout
+
+\begin_layout Subsubsection
+Software Interfaces
+\end_layout
+
+\begin_layout Standard
+MPH will be executed on a Java Virtual Machine (JVM).
+ The proper behavior and visualization of the application is ensured on
+ the following operating systems: Windows, Linux, Mac OSX.
+\end_layout
+
+\begin_layout Subsubsection
+Communication Interfaces
+\end_layout
+
+\begin_layout Standard
+The Client Module must communicate with the Server Module with a TCP/IP
+ connection.
+ The Server and Database components must be located on the same host.
+\end_layout
+
+\begin_layout Subsubsection
+Memory Constraints
+\end_layout
+
+\begin_layout Standard
+There are no specific memory constraints for MPH.
+\end_layout
+
+\begin_layout Subsubsection
+Operations
+\end_layout
+
+\begin_layout Standard
+The operations of the Client Module must be easy and intuitive for students
+ and professors.
+ No specific formation must be required to use the tool.
+ The Server Module must be installed and maintained with no interactions
+ with other existing software and should not require any specific technical
+ skill from a network administrator.
+\end_layout
+
+\begin_layout Subsubsection
+Site Adaptation Requirements
+\end_layout
+
+\begin_layout Standard
+No specific site adaptation is required.
+\end_layout
+
+\begin_layout Subsection
+User characteristics
+\end_layout
+
+\begin_layout Standard
+Users are professors and students enrolled in a university course with project
+ deliverables.
+ They are familiar with the the use of a personal computer and managing
+ files, they are not required to know any additional technical skill.
+ System Administrators must be familiar with the SQL language and have a
+ good knowledge about databases and their maintenance.
+\end_layout
+
+\begin_layout Subsection
+Constraints
+\end_layout
+
+\begin_layout Standard
+MPH must be developed using the JEE (Java Enterprise Edition) platform and,
+ in particular, EJBs (Enterprise Java Beans) for the business logic.
+ The system should enforce user authentication security and ensure deliverables'
+ storage consistency.
+\end_layout
+
+\begin_layout Subsection
+Assumptions and dependencies
+\end_layout
+
+\begin_layout Standard
+A Java Virtual Machine must be installed on the host running the MPH application
+ (both Client and Server Module).
+\end_layout
+
+\begin_layout Section
+Specific Requirements
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Specific-Requirements"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Customer specifications' unclear points
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Customer-specifications'-unclear"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+During the analysis of the software requirements, there were some unclear
+ points in the customer specifications for the MPH software.
+ Here follows a list of unclear points and their final resolution.
+\end_layout
+
+\begin_layout Subsubsection
+Deadline data format
+\end_layout
+
+\begin_layout Standard
+From the specifications, is not known what kind of data format must have
+ the deadlines associated to the deliverables.
+ It was decided to use a date with the following format: 
+\emph on
+day-month-year.
+ 
+\emph default
+A deadline expires
+\emph on
+ 
+\emph default
+at midnight of the specified day-month-year date.
+\end_layout
+
+\begin_layout Subsubsection
+Adding a new course
+\end_layout
+
+\begin_layout Standard
+From the specifications, is not known if a professor can insert a new course
+ into the MPH software or is a system administrator duty.
+ It was decided to let ONLY the system administrator add a new course held
+ by a professor.
+\end_layout
+
+\begin_layout Subsubsection
+Artifact default score
+\end_layout
+
+\begin_layout Standard
+From the specifications, is not known what score must have a Deliverable
+ when inserted into the MPH system.
+ It was decided to set the default score of an Artifact to 1.
+\end_layout
+
+\begin_layout Subsection
+Scenarios
+\end_layout
+
+\begin_layout Subsubsection
+Registration of a new professor and definition of a new project
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:RegNewProfDefNewProj"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The professor Ditta wants to define a project for his own university course
+ "Databases 2".
+ To do so, he intends to use the software MPH, that he has never used yet.
+ Professor Ditta contacts engineer Ancona, the system administrator of MPH,
+ and informs him about his intention to use the software MPH.
+ Ancona launches the MPH server module.
+ After some time spent loading all the components, Ancona loads the MPH
+ Database Software Manager, then he opens the "Execute SQL Query" window
+ and types a query that creates a new professor, with a new professor ID,
+ and the other professor's data like first name, last name, phone number
+ and email address.
+ After the creation of the new professor, Ancona types another SQL query
+ that creates a new course called "Databases 2", held by professor Ditta.
+ The engineer Ancona tells Ditta that he is now ready to use the software
+ MPH.
+ The professor Ditta logs into the system with the username and password
+ chosen before and he accesses his course.
+ He fills a project creation form, defining for the project its name, the
+ start date, the default penalty constant for late deliverables and he sets
+ the deadlines (with their dates).
+ For each deadline, he defines a title, a date by which a deliverable must
+ be uploaded and an optional custom penalty constant for late deliverables.
+\end_layout
+
+\begin_layout Subsubsection
+A student creates a team and another student joins it
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:StudentCreatesTeamAnotherJoinsIt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The student Ancona wants to consult the list of projects that were started
+ by professor Ditta within the university course "Software Engineering"
+ and he wants to create a new working team for the "Dinosaurs Island" project.
+ To do so, he enters the MPH software and invokes the registration form.
+ He enters his username and password and confirms his intention to register
+ to the MPH system.
+ The system informs him that the registration has been performed successfully.
+ Ancona then performs a search of the course "Software Engineering" and
+ selects the only result.
+ He can view all the currently active projects for the course.
+ After selecting the desired item, in the new view that appears (the "Dinosaurs
+ Island" project view) he clicks on "Create new project team".
+ The system confirms the successful creation of the project team.
+ Meanwhile, the student Lo Bianco wants to consult the list of projects
+ that were activated by professor Ditta within his university course and
+ enroll in the project "Dinosaurs Island".
+ To do so, he enters the MPH software and invokes the registration form.
+ He enters his username and password and confirms his intention to register
+ to the MPH system.
+ The system informs him that the registration has been performed successfully.
+ The student Lo Bianco then performs the same operation done by the student
+ Ancona to access the "Dinosaur Island" project view.
+ He can see a list of the teams associated to the project.
+ After selecting the Ancona's team, he confirms his will to join that team.
+ The student Ancona, who already joined the team, receives a team join request
+ by Lo Bianco and accepts the request.
+ When the student Lo Bianco logs into the system, he discovers to be part
+ of the team.
+\end_layout
+
+\begin_layout Subsubsection
+A student upload an artifact for a deliverable
+\end_layout
+
+\begin_layout Standard
+The student Ditta wants to send the "ProjectPlanning.zip" artifact for the
+ deliverable associated to the deadline "Team Registration and Project Planning"
+ of project "Software Engineering 2" held by prof.
+ Ancona.
+ To do so, he logs into the system, searches for his project team, he enters
+ the "Deadlines" section, and then opens the form where he can upload the
+ desired deliverable.
+ He starts the upload process, and after a few seconds the system tells
+ him that the artifact has been sent successfully.
+\end_layout
+
+\begin_layout Subsubsection
+A student leaves a team in order to develop the project alone
+\end_layout
+
+\begin_layout Standard
+The student Cabrini wants to leave a team that she had previously joined,
+ and before the project starts he wants to create a new team and carry out
+ the project alone.
+ To do this, she logs into the system, she enters the team view and selects
+ the "Leave team" button.
+ She confirms the intention to leave the team, and then returns to the main
+ screen of the the project.
+ Then she clicks on "Create new project team", and after confirming the
+ choice and waiting a few seconds, the system confirms the successful creation
+ of the new team for the project.
+ Then she decides to block the membership requests to her team by unchecking
+ the ''Accept new membership requests'' box in the main project window.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+A professor evaluates some deliverables submitted by students
+\end_layout
+
+\begin_layout Standard
+The professor Ditta wants to evaluate some deliverables sent by his students
+ for the project "Database Design" of his course "Databases 2".
+ He enters the main screen of the software, and accesses the course "Databases
+ 2".
+ Then he clicks on the project "Database Design".
+ He takes a look at the list of deadlines of the project and the teams assigned
+ to it.
+ By clicking on a deadline, the professor access to all the artifacts sent
+ by each team for that deliverable and the professor can view and download
+ them to express his opinion about the delivered files.
+ Next to each artifact there is a form that he can use to evaluate it; if
+ a deliverable has not been delivered yet, its score is set to 1.
+ The system displays the final score for each deliverable calculated by
+ subtracting the actual vote of the professor with a corrective penalty
+ in case of late deliveries.
+ Then the professor returns to the main screen and selects a team.
+ He can see all the deliverables submitted by the team up to that moment,
+ and the final score obtained by the team automatically calculated by the
+ system.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+The system administrator sets a new password for a professor who forgot
+ it
+\end_layout
+
+\begin_layout Standard
+The professor Ancona can not enter the MPH system because he forgot his
+ password.
+ He calls engineer Cabrini, the system administrator, in order to make him
+ change his current password.
+ Cabrini launches the MPH server module, she opens the MPH Database Software
+ Manager, she opens up the "Execute SQL Query" view and write a query that
+ let her change the password with a custom password, that she will tell
+ to professor Ancona.
+ Professor Ancona then logs into the MPH system and finally changes his
+ password with a new password.
+\end_layout
+
+\begin_layout Subsubsection
+Example of project team creation (with leaving a team)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:ExProjectFormation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Two students, Ancona and Ditta, want to participate in a project of the
+ course "Software Engineering 2" in the same team.
+ Each of them registers in the MPH system, and update his own basic information.
+ For example, after logging into the system and entering the profile section,
+ Ancona enters his first and last name, phone number and email address.
+ Then he decides to change his password: in the same section he enters his
+ old password and the new password twice, for security reasons.
+ After entering all the information, he confirms that his intention to change
+ the password.
+ The system verifies that the two new passwords are equivalent and that
+ the old password is correct, then the operation ends successfully.
+ After entering his personal data, Ancona decides to create the team.
+ Ancona selects from the main screen the course, and then the project of
+ interest, then he opens the form for creating a new team, he enters "MPH-Ancona
+-Ditta" as project name and confirms his choice.
+ Ancona tells Ditta that the team has been created.
+ Ditta logs into MPH, and from the main menu, he searches for the project
+ "Ancona-Ditta", then he selects the button "Join Project" and confirms
+ his decision.
+ From the main page of the team, Ancona sees a "Join Team" request, and
+ decides to accept it.
+ Ancona then decides that the team is complete, and from the main screen
+ of the project he unchecks the ''Accept new membership requests'' box.
+ After some time, Ditta decides to leave the team before the start of the
+ project: after logging into the system and reaching the team's main page,
+ he clicks on "Leave team" and confirms his request.
+ At this point Ancona decides to continue alone, not allowing other team
+ membership requests, and he changes the team name to "MPH-Ancona".
+ Another student, Cabrini, sees in the list of project teams the "MPH-Ancona"
+ team, and she tries to join it: the system warns Cabrini that the team
+ does not accept any new member, and Cabrini is forced to join another team.
+ After the project has started, Ancona notices that he can not make any
+ change to the team composition nor changing the team's name.
+\end_layout
+
+\begin_layout Subsubsection
+Complex example of interaction between professors and teams
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:CmplxExInterProfStud"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Professor Ancona has recently started his project "Game Making", and he
+ must evaluate the artifacts produced by 2 teams, whose names are "Mushrooms"
+ and "Codemasters".
+ The student Cabrini of team "Mushrooms" wants to send a deliverable for
+ the first deadline, "Project Planning".
+ She logs into the system, enters the team main page, and then she clicks
+ on the deadline and press "Upload Artifact".
+ She chooses a file to send and confirms the upload.
+ The student Zuech belonging to team "Codemasters" does the same, he sends
+ his artifact for the deadline "Project Planning".
+ The day after the deadline, professor Ancona wants to evaluate the work
+ of the two teams.
+ Ancona accesses to the system and opens the main page of the project.
+ He accesses the deliverables view window, and downloads the two files delivered
+ by the two teams by clicking the "Download" button next to each deliverable.
+ After reviewing them, he decides to give them a score, so he inserts 10
+ and 4 respectively for the team "Mushrooms" and "Codemasters" in the "Proposed
+ Score" box next to each artifact.
+ The next day, two days after the "Project Planning" deadline, the student
+ Zuech edits his artifact and resubmit his material for the same deliverable,
+ running the above procedure once more.
+ When he sends the file, the system informs Zuech that he is going to insert
+ a late deliverable, and that the previous artifact will be lost.
+ Zuech decides to continue with the operation, knowing that the final score
+ will be reduced by 2 points since the penalty constant was equal to 1 and
+ the days of delay are 2.
+ After a while, professor Ancona realizes that there is a new late artifact
+ for the "Project Planning" deliverable.
+ He takes a look at it, and he evaluates with a score of 10.Although the
+ system recognizes the artifact as late, and it subtracts a penalty equal
+ to the constant penalty for the number of days of delay, so it shows 8
+ as "Final Score".
+\end_layout
+
+\begin_layout Subsection
+Use Cases
+\end_layout
+
+\begin_layout Subsubsection
+System Administrator
+\end_layout
+
+\begin_layout Paragraph
+Register a New Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Administrator wants to register a professor into the MPH system and
+ has already launched the MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that creates a new professor, with his/her username,
+ password and professor's e-mail
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched.
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data and notices the successful registration of the
+ new professor into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the professor is correctly registered in the MPH system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\begin_layout Itemize
+If the chosen username is not available, the Admin has to ask a new username
+ to the professor and restart the registration procedure
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Create a New Course
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Administrator wants to create a new course held by a professor into
+ the MPH system and has already launched the MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that creates a new course held by a particular professor
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data and notices the successful creation of the new
+ course into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the new course is correctly created in the MPH system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\begin_layout Itemize
+If the name of the course is not available, the Admin has to ask a new course
+ name to the professor and restart the creation procedure
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Edit User Profile
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the System Administrator wants to edit a user profile and has already launched
+ MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that edits the desired user profile
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data and notices that the changes made to the user
+ profile have been saved successfully
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the changes made to the user profile have been saved successfully
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Delete Users
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the System Administrator wants to delete certain users from the MPH system
+ and has already launched the MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that will delete certain users from the MPH system
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data and notices that the desired users have been
+ successfully deleted from the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the desired users were successfully deleted from the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Delete Course
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the System Administrator wants to delete a course from the MPH system and
+ has already launched the MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that will delete a course from the MPH system
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data and notices that the desired course has been
+ successfully deleted from the system
+\end_layout
+
+\begin_layout Enumerate
+The Admin opens the directory containing the delivered artifacts and deletes
+ it
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the desired course was successfully deleted from the system, as the teams
+ associated to it and the artifacts uploaded
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+View Table
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the System Administrator wants to view a particular table of the database
+ and has already launched the MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that will let him to view the desired table
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the Admin has viewed the desired table of the database
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Edit Delivered File's Metadata
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the System Administrator wants to edit a particular delivered file's metadata
+ and has already launched the MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that will let him edit a particular delivered file's
+ metadata
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data and notices the changes made to the delivered
+ file's metadata have been saved successfully
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the changes made to the delivered file's metadata have been saved successfully
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Delete Delivered Files
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the System Administrator wants to delete a particular delivered file and
+ has already launched the MPH server module
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator tries to open the "Execute SQL query" view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the view correctly
+\end_layout
+
+\begin_layout Enumerate
+the Admin types a query that will let him know the file system path of a
+ particular delivered file
+\end_layout
+
+\begin_layout Enumerate
+the Admin confirms the will to run the query
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the query was successfully launched
+\end_layout
+
+\begin_layout Enumerate
+the Admin types another query to check the results
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the results
+\end_layout
+
+\begin_layout Enumerate
+The Admin observes the data, and opens the desired directory
+\end_layout
+
+\begin_layout Enumerate
+The Admin removes the desired file
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the delivered file is removed successfully from the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the SQL query is mistyped, the system won't execute it and the process
+ has to be restarted
+\end_layout
+
+\begin_layout Itemize
+If in the directory there is no such file, the task is considered accomplished
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Check System Log
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors: 
+\emph default
+System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the System Administrator wants to view the system log and the system is
+ already started
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator opens the System Log view
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Admin the MPH system log, which contains all the actions performed
+ by the server
+\end_layout
+
+\begin_layout Enumerate
+the Admin filters the log view with the desired criteria by filling a filter
+ form
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition: 
+\emph default
+MPH shows the Admin a list of system actions corresponding to the desired
+ criteria
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the fields of the filter form are not filled correctly, the Admin has
+ to repeat the operation
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Start/Stop the system
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Start/Stop-the-system"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ System Administrator 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the System Administrator accesses the MPH system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the System Administrator run the terminal
+\end_layout
+
+\begin_layout Enumerate
+the Admin executes the commands to start or stop the MPH system
+\end_layout
+
+\begin_layout Enumerate
+MPH shows diagnostic messages that inform the administrator that the server
+ is running or is stopping
+\end_layout
+
+\begin_layout Enumerate
+the system status is saved permanently
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Admin that the system has started or has been stopped correctly
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the system has started or has been stopped correctly
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If MPH is not running, the Admin can not execute the Stop command
+\end_layout
+
+\begin_layout Itemize
+If MPH is already running, the Admin can not execute the Start command
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Student
+\end_layout
+
+\begin_layout Paragraph
+Register
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating Actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ a Student accesses the MPH system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student decides to register into the MPH system
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a registration form
+\end_layout
+
+\begin_layout Enumerate
+the student chooses a username and a password
+\end_layout
+
+\begin_layout Enumerate
+the student fills the form with personal information
+\end_layout
+
+\begin_layout Enumerate
+the student confirms his/her registration
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the student about the successful registration
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition: 
+\emph default
+the Student is registered into the MPH system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\emph default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the registration form is not filled correctly by the student, the process
+ has to restart
+\end_layout
+
+\begin_layout Itemize
+If the chosen username is not available, the student has to change it
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Log In 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors: 
+\emph default
+Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student, who is already registered into the system, accesses MPH 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\emph default
+ 
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the login command
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a login form 
+\end_layout
+
+\begin_layout Enumerate
+the Student fills the form with his/her username and password
+\end_layout
+
+\begin_layout Enumerate
+MPH checks username and password and authenticates the Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the Student is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the inserted credentials are incorrect, MPH notifies the Student that
+ he/she has to repeat the procedure
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Update Profile Information
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Student is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to edit his/her own profile information
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student his/her profile information page
+\end_layout
+
+\begin_layout Enumerate
+the Student updates his/her personal details
+\end_layout
+
+\begin_layout Enumerate
+the Student saves the changes
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Student that his/her data have been saved correctly 
+\end_layout
+
+\begin_layout Itemize
+Post-condition: the system updates the Student's profile data saved in the
+ database
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the Student fills his/her profile page with incorrect data, MPH does
+ not save any changes and the Student has to repeat the operation
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Search for Students
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors
+\emph default
+: Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to search for information about another
+ student
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a search form 
+\end_layout
+
+\begin_layout Enumerate
+the Student fills the form with the username or the name of the desired
+ student
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a list of students corresponding to the desired criteria
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a student from the list
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH shows the Student the information about the selected student profile
+ page
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the key fields of the search form are not filled correctly, the Student
+ has to repeat the operation 
+\end_layout
+
+\begin_layout Itemize
+If MPH does not find any entity matching the search form data, it notifies
+ the Student, who can perform a new search
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Search for Professors
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors
+\emph default
+: Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to search for a professor
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a search form 
+\end_layout
+
+\begin_layout Enumerate
+the Student fills the form with the username or the name of the desired
+ professor
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a list of professors corresponding to the desired
+ criteria
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a professor from the list
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH shows the Student the information about the selected professor and
+ the list of courses held by the professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the key fields of the search form are not filled correctly, the Student
+ has to repeat the operation 
+\end_layout
+
+\begin_layout Itemize
+If MPH does not find any entity matching the search form data, it notifies
+ the Student, who can perform a new search
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Search for Courses
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Student is viewing a list of professors
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a professor from the list
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a list of courses held by the professor
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a course from the list
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH shows the Student the information about the selected course 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the selected professor does not hold any courses, MPH notifies the Student,
+ who can select another professor
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Search for Projects
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors: 
+\emph default
+Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is viewing a list of courses
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a course from the list
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a list of projects corresponding to the selected course
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a project from the list
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH shows the Student a page containing the project description, the correspond
+ing deliverables' deadlines and the project teams
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the are no projects corresponding to the selected course, MPH notifies
+ the Student, who can select another course
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Create Project Team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Student is viewing information about a project
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to create a new project team
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a project team creation form
+\end_layout
+
+\begin_layout Enumerate
+the Student fills the form with the name and description of the team he
+ wants to create
+\end_layout
+
+\begin_layout Enumerate
+the Student saves the changes
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the student the successful creation of the new project team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition: 
+\emph default
+the project team is created into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the Student fills the form incorrectly, MPH shows him/her an error message
+ and the Student has to repeat the procedure
+\end_layout
+
+\begin_layout Itemize
+If the chosen team name is not available, the Student has to change it
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Search for Project Teams
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is viewing a list of projects
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a project from the list
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a list of project teams
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a project team from the list
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH shows the Student the information about the selected project team 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the are no projects teams corresponding to the selected project, MPH
+ notifies the Student, who can select another project
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Join Project Team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is viewing a list of project teams
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\emph default
+ 
+\end_layout
+
+\begin_layout Enumerate
+the Student selects a project team from the list
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to join the selected team
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a message asking the student to confirm his/her choice to join
+ the project team
+\end_layout
+
+\begin_layout Enumerate
+Student confirms his/her choice
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the student that his/her request to join the selected team
+ has been sent to the team members
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ a membership request has been sent to all team members
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the desired project team does not accept any other members, the Student
+ is notified by the system and he/she has the possibility to select another
+ project team
+\end_layout
+
+\begin_layout Itemize
+If the teams presentation deadline has passed, MPH notifies the Student
+ that it is not possible to join any project team
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Accept/Decline New Membership Request
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Student is logged into the system and belongs to a project team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\emph default
+ 
+\end_layout
+
+\begin_layout Enumerate
+the Student receives the notification of a new join request
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a notification containing the information about a
+ second student who wants to join the project team
+\end_layout
+
+\begin_layout Enumerate
+the Student accepts/declines the new membership request
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a message asking the Student to confirm his/her choice
+\end_layout
+
+\begin_layout Enumerate
+the Student confirms the choice
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Student that the desired choice has been executed
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the second Student is added to the project team if his/her request has
+ been accepted, he is not added otherwise
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the teams presentation deadline has passed or the new membership request
+ has been pending for too long, the request is automatically canceled
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Allow/Block New Membership Requests
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Student is logged into the system and belongs to a project team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student accesses the project team panel
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student the project team panel
+\end_layout
+
+\begin_layout Enumerate
+the Student checks or unchecks the option to allow new membership requests
+\end_layout
+
+\begin_layout Enumerate
+the Student saves the changes
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Student that the changes have been successfully saved
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the project team the Student belongs to will allow new membership requests
+ only if the option is checked
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the teams presentation deadline has passed, MPH notifies the Student
+ that no changes can be made to the project team
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Leave Project Team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Student is logged in and belongs to a project team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student accesses the project team panel
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student the team panel
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to leave the project team
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a message asking to confirm his/her choice
+\end_layout
+
+\begin_layout Enumerate
+the Student confirms his/her choice
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the student that he/she successfully left the project team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition: 
+\emph default
+the Student does not belong anymore to the project team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the teams presentation deadline has passed, MPH notifies the Student
+ that he/she can not leave the current project team
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+View Deliverables
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to view the list of deliverables required
+ by the current project
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student a page containing the deliverables required by the
+ current project and the corresponding files delivered by the team he/she
+ belongs to
+\end_layout
+
+\begin_layout Enumerate
+the Student selects one or more files from the list
+\end_layout
+
+\begin_layout Enumerate
+MPH lets the Student download the selected files
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition: 
+\emph default
+the selected files are sent to the Student's client 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the project team the Student belongs to has not uploaded any files yet,
+ the Student is notified by the system
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Upload Artifact
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Student is viewing the list of deliverables required by the project
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+a Student executes the command to upload an artifact
+\end_layout
+
+\begin_layout Enumerate
+MPH shows an upload form
+\end_layout
+
+\begin_layout Enumerate
+the Student browses his/her computer
+\end_layout
+
+\begin_layout Enumerate
+the Student selects the file to upload
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Student that the selected file has been uploaded correctly
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH permanently stores the uploaded file
+\end_layout
+
+\begin_layout Itemize
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the current project is not active yet, MPH notifies him/her that it is
+ necessary for the project to be active in order to upload a deliverable
+\end_layout
+
+\begin_layout Itemize
+If an input/output error occurs or the system loses its connection with
+ the database, no file is transferred, Student is notified that the procedure
+ encountered a problem and that he/she has to try another time
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+View Shared Information
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is viewing the list of deliverables required by the project
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Student selects the option to view the artifacts delivered by another
+ project team
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Student at the bottom of the deliverables page a frame containing
+ all the deliverables uploaded by the other teams, sorted by team
+\end_layout
+
+\begin_layout Enumerate
+Student selects one or more files from the list
+\end_layout
+
+\begin_layout Enumerate
+MPH lets the Student download the selected files
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the selected files are sent to the Student's client
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the other project team has not uploaded any files yet, the Student is
+ notified by the system
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Log Out
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Student
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Student is logged into the system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Student executes the command to log out from the system
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Student about the successful logout
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the Student is no more logged into the system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If an error occurs during the logout procedure MPH notifies the Student
+ that he/she has to execute the command to log out another time
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Professor
+\end_layout
+
+\begin_layout Paragraph
+Log In 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Professor, who is already registered into the system, accesses MPH
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Professor executes the login command
+\end_layout
+
+\begin_layout Enumerate
+MPH shows a login form 
+\end_layout
+
+\begin_layout Enumerate
+the Professor fills the form with username and password
+\end_layout
+
+\begin_layout Enumerate
+MPH checks username and password and authenticates the Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition: 
+\emph default
+the Professor is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the inserted credentials are incorrect, MPH notifies the Professor that
+ he/she has to repeat the procedure
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Create Course
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor, System Administrator
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Professor wants to insert a new course held by him/her into the MPH
+ system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Professor contacts the Admin asking him/her to create a new course
+\end_layout
+
+\begin_layout Enumerate
+the Admin creates the new course 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition: 
+\emph default
+a new course held by the Professor is inserted into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the Admin is not able to create the new course, the Professor has to
+ wait and try another time
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Publish Project Description and Deadlines
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\emph default
+the Professor is logged into the system
+\end_layout
+
+\begin_layout Enumerate
+the Professor executes the command to publish a new project
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor the list of courses held by him/her
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects a course from the list
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor an input form
+\end_layout
+
+\begin_layout Enumerate
+the Professor fills the form with project title, deliverables' deadlines'
+ dates, the deadline penalty and a description
+\end_layout
+
+\begin_layout Enumerate
+the Professor saves the changes
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Professor that the new project has been published correctly
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH inserts the new project details into the system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the fields of the input form are filled incorrectly, the Professor has
+ to repeat the operation
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+View Project Teams and Students
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Professor is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Professor executes the command to view the list of registered students
+ and project teams
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor a project search form
+\end_layout
+
+\begin_layout Enumerate
+the Professor fills the form with the course and project name
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor a list of projects matching the Professor's choice
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects a project from the list
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH shows the Professor a list of students and project teams participating
+ in the selected project
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the key fields of the search form are not filled correctly, the Professor
+ has to repeat the operation 
+\end_layout
+
+\begin_layout Itemize
+If MPH does not find any entity matching the search form data, it notifies
+ the Professor, who can perform a new search
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Allow Information Sharing
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Professor is viewing a list of project teams
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects the project team who should have visibility on the
+ artifacts produced by another team
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor a list of teams belonging to the same project of
+ the team previously selected
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects the teams whose files will be accessible by the team
+ selected at point 1
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Professor that the operation has been successful
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the first team can access the artifacts produced by the second teams
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No exceptions are expected
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+View Deliverables
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Professor wants to download all the files delivered by a team and he/she
+ is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Professor executes the command to view the deliverables corresponding
+ to a project
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor the list of courses held by him/her
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects a course from the list
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ MPH shows the Professor the list of project deliverables
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the selected project does not contain any delivered files yet, the Professor
+ is notified by the System
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+View Deliverables per team
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Professor is viewing the list of deliverables corresponding to a project
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Professor executes the command to view all the files delivered by a
+ team
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor a search form
+\end_layout
+
+\begin_layout Enumerate
+the Professor fills the form with the name or the number of the desired
+ team
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor a list of project teams matching the Professor's
+ choice
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects a project team from the list
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor the list of files delivered by the selected project
+ team
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects one or more files to download
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the selected files are sent to the Professor's client
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the key fields of the search form are not filled correctly, the Professor
+ has to repeat the operation 
+\end_layout
+
+\begin_layout Itemize
+If MPH does not find any entity matching the search form data, it notifies
+ the Professor, who can perform a new search
+\end_layout
+
+\begin_layout Itemize
+If the selected project team has not delivered any files yet, the Professor
+ is notified by the System
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+View Deliverables per Type
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Professor is viewing the list of deliverables corresponding to a project
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects a deliverable type
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor a list of artifacts of the desired type, uploaded
+ by all project teams
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects one or more files to download
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the selected files are sent to the Professor's client
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If no artifacts of the desired type have been uploaded, the Professor is
+ notified by the system
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Evaluate Artifact
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors:
+\emph default
+ Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition: 
+\emph default
+the Professor is viewing a list of delivered files
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow:
+\end_layout
+
+\begin_layout Enumerate
+the Professor selects an artifact to evaluate
+\end_layout
+
+\begin_layout Enumerate
+MPH shows the Professor an evaluation form
+\end_layout
+
+\begin_layout Enumerate
+the Professor fills the form with a score and optional notes
+\end_layout
+
+\begin_layout Enumerate
+the Professor saves the changes
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Professor that changes have been saved correctly
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the evaluation data are saved permanently into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the fields of the evaluation form are not filled correctly, the Professor
+ has to repeat the operation 
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Log Out
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Participating actors: 
+\emph default
+Professor
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Pre-condition:
+\emph default
+ the Professor is logged into the system
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Event flow: 
+\end_layout
+
+\begin_layout Enumerate
+the Professor executes the command to log out from the system
+\end_layout
+
+\begin_layout Enumerate
+MPH notifies the Professor about the successful logout
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Post-condition:
+\emph default
+ the Professor is no more logged into the system 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Exceptions:
+\emph default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If an error occurs during the logout procedure MPH notifies the Professor
+ that he/she has to execute the command to log out another time
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Functional Requirements
+\end_layout
+
+\begin_layout Standard
+From the use case analysis, the main functions of the MPH software system
+ involves three classes of users: students, professors and system administrators.
+\end_layout
+
+\begin_layout Subsubsection
+Professors-Related Functions
+\end_layout
+
+\begin_layout Standard
+After the system administrator registers a professor into the system, the
+ system allows the professor to perform the following set of actions:
+\end_layout
+
+\begin_layout Itemize
+login into the system
+\end_layout
+
+\begin_layout Itemize
+publish a project description defining the set of corresponding deliverables
+ characterized by a name and a specific deadline
+\end_layout
+
+\begin_layout Itemize
+see the list of registered project teams and the students composing them
+\end_layout
+
+\begin_layout Itemize
+download the delivered files from two views, the first one organizes the
+ deliverables per team, the second one per deliverable type
+\end_layout
+
+\begin_layout Itemize
+evaluate the deliverables of each team with a score from 1 to 10
+\end_layout
+
+\begin_layout Itemize
+enable some simple information sharing between teams, allowing a team to
+ have visibility on the deliverables produced by another team
+\end_layout
+
+\begin_layout Standard
+Moreover the system can compute the final score obtained by each team as
+ an average of the intermediate scores and can automatically assign score
+ 1 to artifacts not delivered or apply a penalty on the score of late deliverabl
+es proportional to the delay time.
+\end_layout
+
+\begin_layout Subsubsection
+Students-Related Functions
+\end_layout
+
+\begin_layout Standard
+MPH provides students with the following functions:
+\end_layout
+
+\begin_layout Itemize
+autonomous registration to the system
+\end_layout
+
+\begin_layout Itemize
+access to the profile information
+\end_layout
+
+\begin_layout Itemize
+join a project team
+\end_layout
+
+\begin_layout Itemize
+access the information and functionalities associated to the team the student
+ belongs to
+\end_layout
+
+\begin_layout Itemize
+submit a deliverable (i.e.
+ a single file) by uploading it into the system
+\end_layout
+
+\begin_layout Itemize
+access the shared deliverables produced by another team that he/she is allowed
+ to view
+\end_layout
+
+\begin_layout Subsubsection
+System-Administrators Functions
+\end_layout
+
+\begin_layout Standard
+MPH provides sysadmins with the following functions:
+\end_layout
+
+\begin_layout Itemize
+Possibility to have complete read/write access to the database of information
+ about the MPH system
+\end_layout
+
+\begin_layout Itemize
+See the status of every transaction made by a user
+\end_layout
+
+\begin_layout Itemize
+See how many users are connected to the MPH system
+\end_layout
+
+\begin_layout Itemize
+Start and stop the MPH system
+\end_layout
+
+\begin_layout Subsection
+Non-Functional Requirements
+\end_layout
+
+\begin_layout Subsubsection
+Reliability
+\end_layout
+
+\begin_layout Standard
+MPH needs to ensure the persistence of the data inserted by the users, saving
+ the MPH system status during the period of time while the system is offline.
+\end_layout
+
+\begin_layout Subsubsection
+Security
+\end_layout
+
+\begin_layout Standard
+There system must provide an authentication system capable of hiding all
+ the operations not allowed to a particular user.
+\end_layout
+
+\begin_layout Subsubsection
+Performance
+\end_layout
+
+\begin_layout Standard
+Access times to the system should be kept reasonably low, and the system
+ must ensure sufficient reactivity to the user input, in the order of tens
+ of seconds.
+\end_layout
+
+\begin_layout Subsubsection
+Usability
+\end_layout
+
+\begin_layout Standard
+The ease and the human interaction with the machine assumes a role of fundamenta
+l importance for the success of the final application.
+ The use of the system should be intuitive, and for each type of user each
+ available function must be implemented to provide a painless and immediate
+ access.
+\end_layout
+
+\begin_layout Section
+Model
+\end_layout
+
+\begin_layout Subsection
+Static Models
+\end_layout
+
+\begin_layout Subsubsection
+Class Diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length -2.66cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename UML/Pictures/Class Diagram/World.png
+	width 80page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MPH Class Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dynamic Models
+\end_layout
+
+\begin_layout Subsubsection
+Sequence diagrams
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/Start_Stop the System + Check System Log.png
+	width 46page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The System Administrator starts the MPH server module and checks the System
+ Log
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/ViewTable.png
+	width 47page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The System Administrator checks a Database Table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/RegLogInOut.png
+	width 55page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Registration, Login and Logout of a Student 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/Allow_Block Membership Requests.png
+	width 59page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Team Membership Request Process 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/Sequence Scenario 1.png
+	width 50page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:RegNewProfDefNewProj"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/Allow Information Sharing.png
+	width 59page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+A Professor sets Information Sharing between Teams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset VSpace -4cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/Sequence Scenario 7.png
+	width 46page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:StudentCreatesTeamAnotherJoinsIt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset VSpace -1cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename UML/Pictures/Sequence Diagram/Sequence Scenario 8.png
+	width 64page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:CmplxExInterProfStud"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Activity diagrams
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/Start_Stop the System + Check System Log.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The System Administrator starts the MPH server module and checks the System
+ Log
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/ViewTable.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The System Administrator checks a Database Table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/RegLogInOut.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Registration, Login and Logout of a Student 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/Allow_Block Membership Requests.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Team Membership Request Process 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/Activity Scenario 1.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:RegNewProfDefNewProj"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/Allow Information Sharing.png
+	width 59page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+A Professor sets Information Sharing between Teams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset VSpace -2cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/Activity Scenario 7.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:StudentCreatesTeamAnotherJoinsIt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/Activity Diagram/Activity Scenario 8.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:CmplxExInterProfStud"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+State Charts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/State Charts/Student.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Student State Chart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename UML/Pictures/State Charts/Team.png
+	width 60page%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Team State Chart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Specifications 
+\end_layout
+
+\begin_layout Subsection
+Design Constraints
+\end_layout
+
+\begin_layout Subsubsection
+Users
+\end_layout
+
+\begin_layout Itemize
+Every user must have a unique username and a password
+\end_layout
+
+\begin_layout Itemize
+Every user can have a First Name, a Last Name, a Phone Number and an E-Mail
+\end_layout
+
+\begin_layout Subsubsection
+Professor
+\end_layout
+
+\begin_layout Itemize
+Every professor can be associated to a set of courses
+\end_layout
+
+\begin_layout Subsubsection
+Students
+\end_layout
+
+\begin_layout Itemize
+Every student can not be part of more than one team simultaneously per project:
+ that means that if a student is in a team, he/she can not join or create
+ other teams for the same project
+\end_layout
+
+\begin_layout Itemize
+Every student member of a team can leave a team only before the "Project
+ Start Date"
+\end_layout
+
+\begin_layout Subsubsection
+Teams
+\end_layout
+
+\begin_layout Itemize
+Every team is composed by one to three students 
+\end_layout
+
+\begin_layout Itemize
+Every team has a unique name per project
+\end_layout
+
+\begin_layout Itemize
+At its creation, a team is set to accept "Membership Requests"
+\end_layout
+
+\begin_layout Itemize
+At any time before the "Project Start Date", any member of the team can
+ set the team to accept "Membership Requests"or not
+\end_layout
+
+\begin_layout Itemize
+When the "Project Start Date" is reached, the team is automatically set
+ to not accept "Membership Requests", the internal composition and the name
+ of the team can not be changed anymore
+\end_layout
+
+\begin_layout Itemize
+When a team can not accept "Membership Requests" no other student can join
+ the team
+\end_layout
+
+\begin_layout Itemize
+Every team has a number of artifacts minor or equal to the number of deliverable
+s of the project
+\end_layout
+
+\begin_layout Itemize
+If in a team, after its creation, there are no more students, the team is
+ automatically deleted
+\end_layout
+
+\begin_layout Itemize
+Every team can only share information with teams related to the same project
+\end_layout
+
+\begin_layout Subsubsection
+Courses
+\end_layout
+
+\begin_layout Itemize
+Every course must be held only by one Professor
+\end_layout
+
+\begin_layout Itemize
+Every course has a set of students associated to it
+\end_layout
+
+\begin_layout Itemize
+Every course can have projects
+\end_layout
+
+\begin_layout Subsubsection
+Projects
+\end_layout
+
+\begin_layout Itemize
+Every project must be defined only by one professor
+\end_layout
+
+\begin_layout Itemize
+Every project must be associated to only one Course
+\end_layout
+
+\begin_layout Itemize
+Every project must have a "Creation Date", a "Start Date" and a "End Date":
+ the "End Date" must be posterior the "Start Date" and both must be posterior
+ to the project's creation date (recorded by the server module).
+\end_layout
+
+\begin_layout Itemize
+Every project must have some Deliverables
+\end_layout
+
+\begin_layout Itemize
+Every project can have a set of teams associated to it 
+\end_layout
+
+\begin_layout Subsubsection
+Deliverables
+\end_layout
+
+\begin_layout Itemize
+Every deliverable must have only one deadline associated to it, that is
+ a tern made up by of day, month and year.
+\end_layout
+
+\begin_layout Itemize
+Every deliverable must be associated to only one project
+\end_layout
+
+\begin_layout Itemize
+Every deadline must follow the Project Start Date and precede the Project
+ End Date
+\end_layout
+
+\begin_layout Subsubsection
+Artifacts
+\end_layout
+
+\begin_layout Itemize
+Every artifact must be assigned to only one deliverable
+\end_layout
+
+\begin_layout Itemize
+Every artifact must belong to only one team
+\end_layout
+
+\begin_layout Itemize
+Every artifact can have a score from 1 to 10
+\end_layout
+
+\begin_layout Itemize
+Every late delivered artifact has a got a penalty proportional to the days
+ of delay, but the total score must always be equal or greater than one
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Alloy
+\end_layout
+
+\begin_layout Subsubsection
+Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily},breaklines=true,language=Mathematica,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+module MPH_world
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Support signatures
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Date
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Date {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Personal Data
+\end_layout
+
+\begin_layout Plain Layout
+
+sig PersonalData {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//ID
+\end_layout
+
+\begin_layout Plain Layout
+
+sig ID {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Name
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Name{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Score
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Score {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Signatures
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//User
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig User {
+\end_layout
+
+\begin_layout Plain Layout
+
+	id: one ID,
+\end_layout
+
+\begin_layout Plain Layout
+
+	personalData: lone PersonalData,
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Professors
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Professor extends User {
+\end_layout
+
+\begin_layout Plain Layout
+
+	courses: set Course,					//every professor can be associated to a set of
+ courses
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Courses
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Course{
+\end_layout
+
+\begin_layout Plain Layout
+
+	projects: set Project, 					//every course can have projects
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Projects
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Project {
+\end_layout
+
+\begin_layout Plain Layout
+
+	deliverables: some Deliverable,	//every project must have some Deliverables
+\end_layout
+
+\begin_layout Plain Layout
+
+	teams: set Team,							//every project has a set of teams associated to
+ it
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Students
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Student extends User{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Team
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Team {
+\end_layout
+
+\begin_layout Plain Layout
+
+	name: one Name,
+\end_layout
+
+\begin_layout Plain Layout
+
+	students: set Student,
+\end_layout
+
+\begin_layout Plain Layout
+
+	artifacts: set Artifact,					//every team has uploaded a set of artifacts
+\end_layout
+
+\begin_layout Plain Layout
+
+	shared: set Team,						//every team can share information with another
+ one
+\end_layout
+
+\begin_layout Plain Layout
+
+} {#students >=1 and #students <= 3}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Deliverables
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Deliverable {
+\end_layout
+
+\begin_layout Plain Layout
+
+	deadline: one Date,						//every derivable must have only one deadline
+ associated to it
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Artifacts
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Artifact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	deliverable: one Deliverable,
+\end_layout
+
+\begin_layout Plain Layout
+
+	score: lone Score,
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Facts
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//ID's of professors and students must be unique
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueID {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all p: Professor, s: Student | p.id != s.id
+\end_layout
+
+\begin_layout Plain Layout
+
+	all s1, s2: Student | s1 != s2 implies s1.id != s2.id
+\end_layout
+
+\begin_layout Plain Layout
+
+	all p1, p2: Professor | p1 != p2 implies p1.id != p2.id
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//for every course there is a professor associated to it
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noCourseWithoutProfessor {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c: Course | one p: Professor | c in p.courses
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//for every project there is a course associated to it
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noProjectWithoutCourse {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all p: Project | one c: Course| p in c.projects
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//for every deliverable there is a project associated to it
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noDeliverableWithoutProject {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all d: Deliverable | one p: Project| d in p.deliverables
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every student can not belong to teams related to the same project
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueProjectTeamPerStudent {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all s: Student, t1, t2: Team | (s in t1.students and s in t2.students and
+ t1 != t2) implies no p: Project | t1 in p.teams and t2 in p.teams
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every team must be associated to only one project
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueProjectPerTeam {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t: Team | no p1, p2: Project | p1 != p2 and t in p1.teams and t in p2.teams
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t: Team | one p: Project | t in p.teams
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every project must be associated to only one course
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueCoursePerProject {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all p: Project | no c1, c2: Course | c1 != c2 and p in c1.projects and p
+ in c2.projects
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//a team can not be composed by students with the same ID
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueStudentsPerTeam {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t: Team, s1,s2: Student |  (s1 in t.students and s2 in t.students and
+ s1 != s2) implies s1.id != s2.id
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every team has a unique name per project
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueTeamNamePerProject {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all p: Project, t1,t2: Team | (t1 in p.teams and t2 in p.teams and t1 !=
+ t2) implies t1.name != t2.name
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every artifact must belong to only one team
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueTeamPerArtifact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all a: Artifact | one t: Team | a in t.artifacts
+\end_layout
+
+\begin_layout Plain Layout
+
+	all a: Artifact | no t1, t2: Team | t1 != t2 and a in t1.artifacts and a
+ in t2.artifacts
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every artifact delivered by a team must be associated to different deliverable
+s belonging to the same project
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueDeliverablePerProjectTeamArtifact {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all a1, a2 : Artifact, t: Team | (a1 != a2 and a1 in t.artifacts and a2
+ in t.artifacts) implies a1.deliverable != a2.deliverable
+\end_layout
+
+\begin_layout Plain Layout
+
+	all a: Artifact, t: Team, p: Project | t in p.teams implies a.deliverable
+ in p.deliverables
+\end_layout
+
+\begin_layout Plain Layout
+
+}	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every deliverable must be associated to only one project
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueProjectPerDeliverable {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no d: Deliverable, p1, p2: Project | p1 != p2 and d in p1.deliverables and
+ d in p2.deliverables
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every team has a number of artifacts minor or equal to the number of deliverab
+les of the project
+\end_layout
+
+\begin_layout Plain Layout
+
+fact maxArtifactsPerTeam {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t: Team, p: Project | t in p.teams implies #t.artifacts <= #p.deliverables
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every team can not share information with itself
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noSelfSharing{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t: Team | no t1: Team | t1  in t.shared and t1 = t
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every team can only share information with teams related to the same project
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noSharingBetweenDifProjects{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t1, t2: Team, p: Project | (t1 in p.teams and (t1 in t2.shared or t2
+ in t1.shared)) implies t2 in p.teams
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//no lone signatures
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noLoneSignatures {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	all d: Date | one del: Deliverable | del.deadline = d			//Date vs Deliverable
+\end_layout
+
+\begin_layout Plain Layout
+
+	all n: Name | one t: Team | t.name = n								//Name vs Team
+\end_layout
+
+\begin_layout Plain Layout
+
+	all s: Score | one a: Artifact | a.score = s							//Score vs Artifact
+\end_layout
+
+\begin_layout Plain Layout
+
+	all pd: PersonalData | one u: User | u.personalData = pd	//Personal Data
+ vs User
+\end_layout
+
+\begin_layout Plain Layout
+
+	all i: ID | one u: User| u.id = i 											//ID vs User
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Assertions
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//every team contains at least one student but no more than three
+\end_layout
+
+\begin_layout Plain Layout
+
+assert studentsInTeam {
+\end_layout
+
+\begin_layout Plain Layout
+
+	no t: Team | #t.students < 1 or #t.students > 3
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+check studentsInTeam
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//if there are no students, there are no teams
+\end_layout
+
+\begin_layout Plain Layout
+
+assert  noStudentsNoTeams{
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Student = 0 implies #Team = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+check noStudentsNoTeams
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//there are no project teams associated to zero or more than two projects
+\end_layout
+
+\begin_layout Plain Layout
+
+assert projectsPerTeam {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t: Team | one p: Project | t in p.teams
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t: Team | no p1, p2: Project | p1 != p2 and t in p1.teams and t in p2.teams
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+check projectsPerTeam
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//there are no artifacts associated to deliverables belonging to a project
+ different from the project associated to the team
+\end_layout
+
+\begin_layout Plain Layout
+
+assert artifactsProject {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all a: Artifact, t: Team, p: Project | (a in t.artifacts and t in p.teams)
+ implies a.deliverable in p.deliverables
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+check artifactsProject
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//if there are no projects, there are no artifacts
+\end_layout
+
+\begin_layout Plain Layout
+
+assert  noProjectsNoArtifacts {
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Project = 0 implies #Artifact = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+check noProjectsNoArtifacts
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//a team can not share information with teams belonging to a different project
+\end_layout
+
+\begin_layout Plain Layout
+
+assert noDifSharing {
+\end_layout
+
+\begin_layout Plain Layout
+
+	all t1, t2 : Team | no p1,p2: Project | (t1 in t2.shared or t2 in t1.shared)
+ and p1 != p2 and t1 in p1.teams and t2 in p2.teams
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+check noDifSharing
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//Predicates
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred showWorld1(){
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Deliverable > 5
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Professor > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Team > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Course > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Artifact > 5
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred showWorld2(){
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c: Course | #c.projects > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Project > 3
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Professor > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Team > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Course > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Student > 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred showWorld3(){
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c: Course | #c.projects = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c: Project | #c.teams > 0 and #c.deliverables> 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Project = 3
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Professor = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Course > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Student > 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+run showWorld1 for 7
+\end_layout
+
+\begin_layout Plain Layout
+
+run showWorld2 for 7
+\end_layout
+
+\begin_layout Plain Layout
+
+run showWorld3 for 7
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Worlds 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Alloy/Worlds/World1.png
+	height 64pheight%
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+World # 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Alloy/Worlds/World2.png
+	height 68pheight%
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+World # 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Alloy/Worlds/World3.png
+	height 68pheight%
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+World # 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

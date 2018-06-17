@@ -1,0 +1,140 @@
+10
+
+dir
+0
+https://pl3.projectlocker.com/raasoftware/Manage_Project_Homework/svn/MPH-Client/doc
+https://pl3.projectlocker.com/raasoftware/Manage_Project_Homework/svn
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+
+
+
+
+
+
+
+
+
+
+
+8484d23e-75a3-418b-a6ed-9233468c1f43
+
+stylesheet.css
+file
+
+
+
+add
+
+allclasses-frame.html
+file
+
+
+
+add
+
+mph
+dir
+
+
+
+add
+
+constant-values.html
+file
+
+
+
+add
+
+help-doc.html
+file
+
+
+
+add
+
+serialized-form.html
+file
+
+
+
+add
+
+overview-frame.html
+file
+
+
+
+add
+
+overview-summary.html
+file
+
+
+
+add
+
+package-list
+file
+
+
+
+add
+
+overview-tree.html
+file
+
+
+
+add
+
+index-files
+dir
+
+
+
+add
+
+index.html
+file
+
+
+
+add
+
+resources
+dir
+
+
+
+add
+
+deprecated-list.html
+file
+
+
+
+add
+
+util
+dir
+
+
+
+add
+
+allclasses-noframe.html
+file
+
+
+
+add
+

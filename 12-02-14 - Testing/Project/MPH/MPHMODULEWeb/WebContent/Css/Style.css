@@ -1,0 +1,426 @@
+@CHARSET "ISO-8859-1";
+@import url("buttons.css");
+
+
+/* Codice generale jsp */
+
+body{
+	background: #80d7e0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#24afe6', endColorstr='#80d7e0'); 
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#24afe6', endColorstr='#80d7e0');
+	background: -webkit-gradient(linear, left top, left bottom, from(#24afe6), to(#80d7e0)); 
+	background: -moz-linear-gradient(top,  #24afe6,  #80d7e0);
+	width:99%;
+	height:100%;
+	font-family: calibri,georgia,paladino;
+	font-size: 15px;
+	line-height:20px;
+	color: #ffffff;
+	z-index: 1;
+	background-repeat: no-repeat; 
+	background-attachment: fixed;
+	/*overflow: hidden;*/
+}
+
+#pagina{
+	background: #000000;
+	width:940px;
+	min-height:100%;
+	margin-left: -470px;
+	margin-top:-10px;
+	left: 50%;
+	/*overflow: hidden;
+	z-index: 2;*/
+	position: absolute;
+	padding-bottom:40px;
+}
+
+.header{
+	float:center;
+	border:none;
+}
+
+.header img{
+	border: none;
+}
+
+.headerLink {
+	float: right;
+	margin-top: 30px;
+	margin-right: 60px;
+}
+
+.headerLink a {
+	color:white;
+}
+
+.pulisci {
+	clear:both;
+}
+
+.formLogin {
+	width: 230px;
+    margin: 0 auto;
+}
+
+fieldset p {
+	font-size:12px;
+}
+
+fieldset a:link {
+	color:#ffffff;
+}
+
+fieldset a:visited {
+	color:#ffffff;
+}
+
+fieldset {
+	border: none; 
+}
+
+.imgMph {
+	text-align:center;
+}
+
+.titoloLabel {
+	font-weight: bold;
+}
+
+.divInfoUtente{
+	margin-top:25px;
+	width:100%;
+}
+
+.divInfoUtente img{
+	float:left;
+	width: 250px;
+	height: 250px;
+	margin-left:70px;
+	margin-bottom:15px;
+}
+
+.infoUtente{
+	float: left;
+	margin-left: 50px;
+	line-height: 30px;
+	margin-top: 40px;
+}
+
+.ModInfo{
+	display: inline;
+	float:left;
+	margin-left:50px;
+}
+
+#funzioniUtente{
+	width:100%;
+	float:left;
+	margin-left:68px;
+	padding-top:25px;
+}
+
+#funzioniMenu{
+	width:100%;
+	float:left;
+	margin-left:-5px;
+	padding-top:5px;
+	padding-bottom:20px;
+}
+
+#funzioniMenuBr{
+	width:100%;
+	float:left;
+	margin-left:10px;
+	margin-top:-10px;
+	padding-bottom:20px;
+}
+
+#divGenerale{
+	width:100%;
+	float:left;
+	margin-left:60px;
+	padding-top:50px;
+}
+
+#titoli{
+	font-size:20px;
+}
+
+.elencoPuntatoUL{
+	margin-top:-10px;
+	margin-bottom:-20px;
+	margin-left:-5px;
+}
+
+.elencoPuntatoUL li{
+	margin-left:-5px;
+	padding-top:5px;
+}
+
+
+/* Codice per Studente */
+
+#linkElenco{
+	margin-left:40px;
+	padding-top:15px;
+	padding-bottom:10px;
+	color:white;
+}
+
+#linkElencoConMenu{
+	margin-left:20px;
+	margin-top:-22px;
+	color:white;
+}
+
+#linkElencoConUl{
+	float:left;
+	margin-left:0px;
+	margin-top:1px;
+	color:white;
+}
+
+#elencoGruppi{
+	width:100%;
+	float:left;
+	margin-left:60px;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+#unioneGruppo{
+	width:100%;
+	float:left;
+	margin-left:27px;
+	margin-top:10px;
+}
+
+#creaGruppo{
+	width:100%;
+	float:left;
+	margin-left:27px;
+	margin-top:15px;
+}
+
+#selectProj{
+	display:none;
+	margin-left:50px;
+}
+
+.Upload {
+	margin-left: 50px;
+}
+
+
+
+/* Codice per Professore */
+
+#creaStep1{
+	display:none;
+}
+
+#creaStep3{
+	display:none;
+}
+
+#creaStep1 form{
+	margin-top:30px;
+	margin-left:60px;
+}
+
+#creaStep2 form{
+	margin-top:25px;
+	margin-left:60px;
+}
+
+#creaStep3 form{
+	margin-top:25px;
+	margin-left:60px;
+}
+
+#selezionaProgettoProfessore{
+	display:none;
+	width:100%;
+	float:left;
+	margin-left:60px;
+	margin-top:20px;
+	padding-top:20px;
+}
+
+
+
+/* Codice per Amministratore */
+
+#registraProf {
+	display:none;
+}
+
+#registraProf form {
+	margin-left: 50px;
+}
+
+
+
+/* Codice per Errori */
+
+input.datepicker { 
+	width: 100px; 
+	border: 1px solid #999999; 
+}
+
+#reg {
+	margin-left: 0px;	
+}
+
+#tinybox {
+	position:absolute; 
+	display:none; 
+	padding:10px; 
+	background:#fff url(../Images/preload.gif) no-repeat 50% 50%; 
+	border:10px solid #e3e3e3; 
+	z-index:2000;
+	color: #000000;
+}
+
+#tinymask {
+	position:absolute; 
+	display:none; 
+	top:0; 
+	left:0; 
+	height:100%; 
+	width:100%; 
+	background:#000; 
+	z-index:1500;
+	color: #000000;
+}
+
+#tinycontent {
+	background:#fff
+}
+
+#tclose {
+	position:absolute; 
+	top:-20px; 
+	right:-25px; 
+	width:30px; 
+	height:30px; 
+	cursor:pointer; 
+	background:url(../Images/close.png) no-repeat
+}
+
+#tclose:hover {
+	background-position:0 -30px
+}
+
+
+
+/* Codice per calendario */
+
+.datepickerControl {
+	border:				1px solid #999999;
+	background-color:	#EEEEEE;
+	padding:			5px;
+	color:				black;
+}
+
+.datepickerControl td {
+	text-align:			center;
+	font-family:		sans-serif;
+	font-size:			11px;
+	padding:			1px;
+}
+
+.datepickerControl tr.monthLabel td {
+	background-color:	#FFFFFF;
+	border:				1px solid #999999;
+	font-weight:		bold;
+}
+
+.datepickerControl tr.navigation td {
+	cursor:				pointer;
+}
+
+.datepickerControl tr.navigation td:hover {
+	text-decoration:	underline;
+}
+
+.datepickerControl tr.dayLabel td {
+	/*
+	border:				1px solid #C0D8EA;
+	background-color:	#C0D8EA;
+	*/
+	border:				1px solid #003366;
+	background-color:	#003366;
+	color:				black;
+	font-weight:		bold;
+}
+
+.datepickerControl td.day, .datepickerControl td.dayothermonth {
+	cursor:				pointer;
+	background-color:	#FFFFFF;
+	border:				1px solid #EEEEEE;
+	width:				2em;
+}
+
+.datepickerControl td.dayothermonth {
+	color:				#999999;
+	font-style:			italic;
+}
+
+.datepickerControl td.day:hover {
+	background-color:	#EBE4C0;
+} 
+
+.datepickerControl td.weekend {
+	background-color:	#CCCCCC;
+	font-style:			italic;
+}
+
+.datepickerControl td.today {
+	font-weight:		bold;
+}
+
+.datepickerControl td.hour {
+	cursor:				pointer;
+	background-color:	#FFFFFF;
+	border:				1px solid #EEEEEE;
+	width:				2em;
+}
+
+.datepickerControl td.minute {
+	cursor:				pointer;
+	background-color:	#FFFFFF;
+	border:				1px solid #EEEEEE;
+	width:				2em;
+}
+
+.datepickerControl td input,
+.datepickerControl td button {
+	font-size:			11px;
+	padding:			0;
+	border:				1px solid #999999;
+	text-align:			center;
+}
+
+.datepickerControl td.ampm {
+	cursor:				pointer;
+	background-color:	#CCCCCC;
+	border:				1px solid #EEEEEE;
+	width:				2em;
+}
+
+.datepickerControl td.current {
+	font-weight:		bold;
+	background-color:	#EBC2C0;
+}
+
+.datepickerControl input.current {
+	background-color:	#EBC2C0;
+}
+
+.datepickerControl td.current:hover {
+	background-color:	#EBC2C0;
+}
+
+

@@ -1,0 +1,295 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset External
+	template RasterImage
+	filename ../11-11-24 - RASD/200px-Logo_Politecnico_Milano.png
+	clip
+	width 30page%
+
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Newline linebreak
+\end_inset
+
+Manage Project Homework: Feasibility Study
+\end_layout
+
+\begin_layout Author
+Riccardo Ancona - Alessandro Ditta
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Purpose
+\end_layout
+
+\begin_layout Standard
+The purpose of this document is to argument whether the MPH project can
+ be developed and what are the risks related to its development.
+\end_layout
+
+\begin_layout Standard
+The intended audience of this document includes the potential developers
+ and the project managers of the platform.
+\end_layout
+
+\begin_layout Subsection
+Scope
+\end_layout
+
+\begin_layout Standard
+The software system to be produced is a projects management tool which will
+ be referred to as Manage Project Homework (MPH) throughout this document.
+\end_layout
+
+\begin_layout Standard
+MPH will allow professors to publish a project description and to define
+ the set of the corresponding deliverables.
+ It will allow students to join project teams and submit deliverables by
+ uploading them into the system.
+\end_layout
+
+\begin_layout Standard
+The professor will also be able to evaluate the project deliverables assigning
+ a score to them leaving to the system the computation of the final score,
+ based on the average of the individual scores.
+ MPH will provide some information sharing functionalities among different
+ groups.
+ 
+\end_layout
+
+\begin_layout Subsection
+References
+\end_layout
+
+\begin_layout Itemize
+Description of the project 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://corsi.metid.polimi.it"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+IEEE Std.
+ 830-1998: IEEE Recommended Practice for Software Requirements Specifications
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=720574"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Carlo Ghezzi, Mehdi Jazayeri, Dino Mandrioli, Ingegneria del Software -
+ Fondamenti e Prinicipi, Pearson Education Italia, 2004
+\end_layout
+
+\begin_layout Subsection
+Overview
+\end_layout
+
+\begin_layout Standard
+The rest of this document contains the "Risks Analysis" in Section 2, and
+ in the last section will be presented the final feasibility conclusions
+ about the development of the MPH system.
+\end_layout
+
+\begin_layout Section
+Risks Analysis
+\end_layout
+
+\begin_layout Subsection
+Deadlines
+\end_layout
+
+\begin_layout Standard
+The deadlines are calibrated in order to have a period of time not too long
+ to make the project: in this way, the project is realistic and feasible.
+ The project planning showed that the team will be able to finish the project
+ some days before the final deadline.
+ All intermediate deadlines can be met.
+ The implementation deadline is the most critical one, because problems
+ could arise due to team inexperience with the tools that will be used.
+ This problems could cause delays: thus, there is a possibility of going
+ beyond the last deadline and deliver the project late.
+\end_layout
+
+\begin_layout Subsection
+Requirements
+\end_layout
+
+\begin_layout Standard
+The project description provided by the customer is clear, but incomplete.
+ However, with the assumptions made by the team, it will be able to proceed
+ with the Design Document phase without any problems.
+ Moreover, the contract does not include that the customer can make changes
+ in the requirements during the development, which reduces the risk that
+ the product developed will not meet the customer's expectations.
+\end_layout
+
+\begin_layout Subsection
+Technical Difficulties
+\end_layout
+
+\begin_layout Standard
+The team will use the JEE platform to develop the MPH application.
+ This platform includes many COTS components but it is new to the developers.
+ The teams will have some external tutors which may also be contacted about
+ the management of the project, its design and its implementation, this
+ will provide the team to receive adequate training during the project.
+ However, the inexperience of the team may cause delays in the project developme
+nt.
+ To overcome such delays, the team will have to reduce the set of implemented
+ functionalities in the implementation phase and deliver the project in
+ time with the final deadline.
+ 
+\end_layout
+
+\begin_layout Subsection
+Management Difficulties
+\end_layout
+
+\begin_layout Standard
+The team, consisting of two developers, will work 6 hours a day.
+ Each day, for 3 hours, they will be in close contact in the same environment,
+ while the other 3 hours are spent in their homes.
+ This could cause potential misalignments during the development, that must
+ be held in highest regard and must be avoided through regular meetings
+ (even daily) between the two developers.
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Subsection
+Feasibility
+\end_layout
+
+\begin_layout Standard
+The analysis performed so far showed that there are no special risks that
+ could seriously threaten the success of the project, and in any case, for
+ each risk found has been provided an effective recovery plan.
+ In the end, the project is feasible and beneficial to the team, who agrees
+ to begin the software development.
+\end_layout
+
+\end_body
+\end_document
